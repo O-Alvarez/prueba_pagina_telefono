@@ -15,6 +15,12 @@ margin: 0;
     display: none;
 }
 
+#Boton_generar_solicitud{
+
+    text-align: center;
+     margin-bottom: 2vw;
+}
+
 
 #Detalles_Prestamo{
     display: none;
@@ -30,8 +36,9 @@ margin: 0;
     text-align: center;
 }
 
-#mMstrar_Tabla table{
-    margin-left: 1rem;
+#Mostrar_Tabla table{
+   margin-left: 1rem;
+   margin-right: 1rem;
 }
 
 #Contenedor{
@@ -100,7 +107,7 @@ label{
    
 }
 
-#Mostrar_Tabla{
+#Mostrar_Tabla {
     width: 100%;
     overflow: auto;
     overflow-x: auto;
@@ -148,7 +155,7 @@ label{
 @media (max-width: 699px)  { 
 
     #Contenedor{
-        margin-top: 2rem;
+        margin-top: 0;
     }
 
 
@@ -159,7 +166,20 @@ label{
 }
 
     header{
-     height: 3rem;
+
+     height: 4.2rem;
+     background-image: 
+     linear-gradient(
+         to bottom,
+         rgba(83, 120, 201, 0.301),
+         rgba(0, 0, 255, 0.26)
+       ), url("background.jpg");
+ 
+     background-repeat: no-repeat;
+     background-size: 100%;
+     right: 0;
+     background-position:top;
+     padding-bottom: 4.5rem;
 
     }
     #Logo{
@@ -181,39 +201,58 @@ label{
     margin-left: 1rem;
 }
 
-#Detalles_Prestamo table{
-    min-width: max-content;
-    max-width: 5rem;
-    margin: auto;
-    margin-right: 1rem;
-    margin-left: 1rem;
-}
+
 
 #Detalles_Prestamo tr th{
     text-align: center;
     padding: 0;
 }
 
+.table-wrapper th{
+    vertical-align: middle;
+    position: sticky;
+    top: 0;
+    height: 45px ;
+    background-color: #aeb1b3;
+    
+    
+}
+
+
 .table-wrapper{
-    width: 100%;
-    max-height: 450px;
+    margin: auto;
+    width: 95%;
+    max-height: 255px;
     overflow: auto;
     overflow-x: auto;
    
 }
 
-#Mostrar_Tabla{
-    width: 100%;
+
+#Mostrar_tabla{
+    width: 95%;
     overflow: auto;
     overflow-x: auto;
     overflow-y: auto;
-    max-height: 400px;
+    max-height: 250px;
+}
+
+#formulario table{
+  margin-right: 1rem;
 }
 
 #Mostrar_Tabla tr th{
     text-align: center;
     padding: 0;
 
+}
+
+#Mostrar_Tabla th{
+    position: sticky;
+    top: 0;
+    height: 45px;
+    vertical-align: middle;
+    background-color: #aeb1b3;
 }
 
 }
