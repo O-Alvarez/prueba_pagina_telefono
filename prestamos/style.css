@@ -152,7 +152,9 @@ label{
     }
 
 
-body{
+#Body{
+    background-image: none;
+    background-color: white;
     margin: 0%;
 }
 
