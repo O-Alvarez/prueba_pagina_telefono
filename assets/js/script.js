@@ -1,3 +1,6 @@
+
+var c_detalle = [];
+
 function MostrarTabla() {
     const ingresos = parseFloat(document.getElementById("ingresos").value);
     const monto = parseFloat(document.getElementById("monto").value);
@@ -41,7 +44,7 @@ function MostrarTabla() {
                 impuesto: s_Impuesto.toFixed(2),
             })
             const resultadoDiv = document.getElementById("Mostrar_Tabla");
-            resultadoDiv.innerHTML = `<table class="table table-striped">
+            resultadoDiv.innerHTML = `<table class="table table-striped id="Tabla_Amortizaciones">
    <thead>
    <tr>
        <th>Meses</th>
@@ -71,7 +74,7 @@ function MostrarTabla() {
 
     }
 
-
+//CALCULOS PARA TABLA FLAT
     else if (monto < 20000 && monto > 0) {
         const credito = document.getElementById("tipo");
         credito.value = "Flat"
@@ -104,7 +107,7 @@ function MostrarTabla() {
             });
 
             const resultadoDiv = document.getElementById("Mostrar_Tabla");
-            resultadoDiv.innerHTML = `<table class="table table-striped">
+            resultadoDiv.innerHTML = `<table class="table table-striped" id="Tabla_Amortizaciones">
     <thead>
     <tr>
         <th>Meses</th>
@@ -153,7 +156,7 @@ function calcularPrestamo() {
     const cuotas = parseInt(document.getElementById("cuotas").value);
     const tipo = document.getElementById("tipo").value;
     const Tiempo = document.getElementById("Tiempo_laborando").value;
-    const c_detalle = [];
+   
 
     const totalInteres = 0;
     const totalPagar = 0;
@@ -174,7 +177,7 @@ function calcularPrestamo() {
             var s_Cuota;
             var s_Interes;
             var s_Impuesto;
-
+            c_detalle = []
 
 
             for (let i = 1; i <= cuotas; i++) {
@@ -197,32 +200,6 @@ function calcularPrestamo() {
                     saldo: s_Saldo.toFixed(2),
                     impuesto: s_Impuesto.toFixed(2),
                 })
-                const resultadoDiv = document.getElementById("Mostrar_Tabla");
-                resultadoDiv.innerHTML = `<table class="table table-striped">
-           <thead>
-           <tr>
-               <th>Meses</th>
-               <th>Cuota</th>
-               <th>Capital</th>
-               <th>Intereses</th>
-               <th>Saldo</th>
-               <th>Impuesto</th>
-           </tr>
-           </thead>
-           <tbody>
-           ${c_detalle.map(d => `
-               <tr>
-               <td>${d.mes}</td>
-               <td>Q${d.cuota}</td>
-               <td>Q${d.capital}</td>
-               <td>Q${d.interes}</td>
-               <td>Q${d.saldo}</td>
-               <td>Q${d.impuesto}</td>
-               </tr>
-           `).join('')}
-           </tbody>
-        </table>`;
-
             }
 
 
@@ -233,7 +210,7 @@ function calcularPrestamo() {
             const credito = document.getElementById("tipo");
             credito.value = "Flat"
             tasaInteres = 3.5 / 100;
-
+            c_detalle = []
             const c_capital = monto / cuotas;
             var c_CuotaMensual = (monto + (monto * cuotas * tasaInteres)) / cuotas;
             var Saldo = monto;
@@ -259,33 +236,6 @@ function calcularPrestamo() {
                     saldo: Saldo.toFixed(2),
                     impuesto: c_impuesto.toFixed(2),
                 });
-
-                const resultadoDiv = document.getElementById("Mostrar_Tabla");
-                resultadoDiv.innerHTML = `<table class="table table-striped">
-            <thead>
-            <tr>
-                <th>Meses</th>
-                <th>Cuota</th>
-                <th>Capital</th>
-                <th>Intereses</th>
-                <th>Saldo</th>
-                <th>Impuesto</th>
-            </tr>
-            </thead>
-            <tbody>
-            ${c_detalle.map(d => `
-                <tr>
-                <td>${d.mes}</td>
-                <td>Q${d.cuota}</td>
-                <td>Q${d.capital}</td>
-                <td>Q${d.interes}</td>
-                <td>Q${d.saldo}</td>
-                <td>Q${d.impuesto}</td>
-                </tr>
-            `).join('')}
-            </tbody>
-        </table>`;
-
             }
         }
 
@@ -308,13 +258,13 @@ function calcularPrestamo() {
     <hr>
     <p><strong>Monto Solicitado:</strong> Q${monto.toFixed(2)}</p>
     <p><strong>No. de Cuotas:</strong> ${cuotas}</p>
-    <p><strong>Tipo de Crédito:</strong> ${tipo}</p>
+    <p class="Tipo_detalle"><strong>Tipo de Crédito:</strong> ${tipo}</p>
     <hr>
 
     <div class="outer-wrapper">
     <div class="table-wrapper">
 
-    <table class="table table-striped" style="margin-bottom: 2vw;">
+    <table class="table table-striped" id="Tabla_Amortizaciones" style="margin-bottom: 2vw;">
         <thead>
         <tr>
             <th>Meses</th>
@@ -352,7 +302,6 @@ function calcularPrestamo() {
 
         const captcha = document.getElementById('Enviar_Recaptcha');
         captcha.style.display = 'block';
-
 
     }
     else {
@@ -406,15 +355,28 @@ function sendEmail() {
 }
 
 
-
-
-
 const form = document.getElementById("formulario");
 form.addEventListener("submit", function (event) {
     event.preventDefault(); // Detener la acción predeterminada del formulario
     calcularPrestamo(); // Llamar a la función calcularPrestamo
+    window.location.hash= '#Enviar_Recaptcha';
 });
 
+
+
+function generarPDF() {
+    // Obtener el div que contiene el contenido a exportar
+    var divContenido = document.getElementById('Detalles_Prestamo').innerHTML;
+    // Crear un nuevo documento PDF
+    var doc = new jsPDF();
+    // Agregar el contenido del div al documento PDF
+    doc.fromHTML(divContenido,15,15,{
+    });
+    // Descargar el documento PDF
+    window.open(doc.output('bloburl'), '_blank');
+    /*doc.save('miDocumento.pdf');*/
+  }
+ 
 
 
 

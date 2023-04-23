@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($response->success) {
         if (isset($_POST['correo']) && isset($_POST['message'])) {
             $to = "vallague.com@gmail.com";
-            $subject = "Detalles del préstamo";
+            $subject = "Solicitud de préstamo";
             $message = $_POST['message'];
             $headers = "From: " . $_POST['correo'] . "\r\n" .
                 "Reply-To: " . $_POST['correo'] . "\r\n" .

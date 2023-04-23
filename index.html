@@ -12,13 +12,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
+
+  <script src="assets/js/FileSaver.min.js"></script>
+  <script src="assets/js/jspdf.min.js"></script>
+
+
 </head>
 
 <body id="Body">
   <header>
 
 
-    <img class="logo" src="assets/img/LOGO EASY CAPITAL-01.png" id="Logo" alt="Logo_BML">
+    <img class="logo" src="assets/img/Logo.png" id="Logo" alt="Logo_BML">
     <nav>
 
     </nav>
@@ -59,16 +64,13 @@
         <label for="monto" class="form-label">Monto Solicitado:</label>
         <input type="number" class="form-control" id="monto" name="monto" required onchange="MostrarTabla()"><br>
         <label for="cuotas" class="form-label">No. de Cuotas:</label>
-        <input type="number" class="form-control" id="cuotas" name="cuotas" onchange="MostrarTabla()" required
-          autocomplete="off"><br>
-        <label for="tipo">Tipo de Crédito:</label>
+        <input type="number" class="form-control" id="cuotas" name="cuotas" onchange="MostrarTabla()" required autocomplete="off"><br>
         <input type="text" disabled class="form-control" id="tipo" name="tipo" required autocomplete="off"><br>
-
-        <h2>Tabla de amortizaciones</h2>
-
+      </div>
+      <h2>Tabla de amortizaciones</h2>
+      <div class="mb-3" style="margin-left: 2vw; padding-right: 2vw;">
         <div id="Mostrar_Tabla">
           </style>
-
           <table class="table table-hover" id="Tabla_Mostrada">
             <thead>
               <tr>
@@ -96,7 +98,7 @@
         </div>
 
         <div id="Boton_generar_solicitud">
-          <button type="submit" class="btn btn-primary" id="Boton">Generar Solicitud</button>
+          <button type="submit" class="btn btn-primary" id="Boton"> Generar Solicitud</button> 
         </div>
     </form>
     <div id="Detalles_Prestamo" style="margin-bottom: 2vw;"></div>
@@ -107,13 +109,18 @@
     <div class="container-sm" id="Enviar_Recaptcha">
       <div class="g-recaptcha" data-sitekey="6LcXp6olAAAAAKiXut9OKx6ClO-STCFDYIMronUq" id="miCaptcha"></div>
       <div class="enviar">
+        <input type="button" name="Descargar" id="Descargar_Solicitud" class="btn btn-primary" onclick="generarPDF()"
+        value="Descargar Solicitud">
         <input type="button" name="Enviar" id="Enviar_solicitud" class="btn btn-primary" onclick="sendEmail();"
           value="Enviar">
+        
+
       </div>
     </div>
 
 
 </body>
+
 <script>
   window.onload = function () {
     grecaptcha.render('miCaptcha', {

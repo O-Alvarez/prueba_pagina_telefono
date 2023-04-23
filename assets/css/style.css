@@ -31,7 +31,7 @@ margin: 0;
     display: none;
     padding-left: 2vw;
     padding-right: 2vw;
-    margin-right: 2rem;
+    
     border: black solid;
     margin: top 2vw
 }
@@ -142,9 +142,20 @@ label{
     max-height: 450px;
 }
 
+#tipo{
+    display: none;
+}
+
+.Tipo_detalle{
+    display: none;
+}
+
 #Enviar_Recaptcha{
     display: none;
+    margin-top: 2rem;
     text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 #miCaptcha{
@@ -155,7 +166,7 @@ label{
   }
 
 .enviar{
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .btn {
