@@ -1,4 +1,4 @@
-
+const Cuerpo_correo="";
 var c_detalle = [];
 
 function MostrarTabla() {
@@ -47,10 +47,10 @@ function MostrarTabla() {
             resultadoDiv.innerHTML = `<table class="table table-striped id="Tabla_Amortizaciones">
    <thead>
    <tr>
-       <th>Meses</th>
+       <th>Mes</th>
        <th>Cuota</th>
        <th>Capital</th>
-       <th>Intereses</th>
+       <th>Interes</th>
        <th>Saldo</th>
        <th>Impuesto</th>
    </tr>
@@ -110,10 +110,10 @@ function MostrarTabla() {
             resultadoDiv.innerHTML = `<table class="table table-striped" id="Tabla_Amortizaciones">
     <thead>
     <tr>
-        <th>Meses</th>
+        <th>Mes</th>
         <th>Cuota</th>
         <th>Capital</th>
-        <th>Intereses</th>
+        <th>Interes</th>
         <th>Saldo</th>
         <th>Impuesto</th>
     </tr>
@@ -260,17 +260,18 @@ function calcularPrestamo() {
     <p><strong>No. de Cuotas:</strong> ${cuotas}</p>
     <p class="Tipo_detalle"><strong>Tipo de Crédito:</strong> ${tipo}</p>
     <hr>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <div class="outer-wrapper">
     <div class="table-wrapper">
 
     <table class="table table-striped" id="Tabla_Amortizaciones" style="margin-bottom: 2vw;">
         <thead>
-        <tr>
-            <th>Meses</th>
+        <tr >
+            <th>Mes</th>
             <th>Cuota</th>
             <th>Capital</th>
-            <th>Intereses</th>
+            <th>Interes</th>
             <th>Saldo</th>
             <th>Impuesto</th>
         </tr>
@@ -296,6 +297,62 @@ function calcularPrestamo() {
     <hr>
     <!--<p><strong>Total a pagar:</strong> Q${totalPagar.toFixed(2)}</p>
     <p><strong>Total de intereses:</strong> Q${totalInteres.toFixed(2)}</p>-->`;
+
+    const Cuerpo_correo = document.getElementById('Formato_Correo');
+        Cuerpo_correo.innerHTML=`
+        <h2 style="margin-top: 1vw; text-align: center;">Detalles del Préstamo</h2>
+        <p><strong>Nombre:</strong> ${nombre}</p>
+        <p><strong>Número de DPI:</strong> ${dpi}</p>
+        <p><strong>NIT:</strong> ${nit}</p>
+        <p><strong>Correo Electrónico:</strong> ${correo}</p>
+        <p><strong>Teléfono:</strong> ${telefono}</p>
+        <p><strong>Empresa en la que labora:</strong> ${empresa}</p>
+        <p><strong>Puesto que ocupa:</strong> ${puesto}</p>
+        <p><strong>Años de laburo en la empresa:</strong> ${Tiempo}</p>
+        <p><strong>Total de Ingresos mensuales:</strong> Q${ingresos.toFixed(2)}</p>
+        <hr>
+        <p><strong>Monto Solicitado:</strong> Q${monto.toFixed(2)}</p>
+        <p><strong>No. de Cuotas:</strong> ${cuotas}</p>
+        <p class="Tipo_detalle"><strong>Tipo de Crédito:</strong> ${tipo}</p>
+        <hr>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <div class="outer-wrapper">
+        <div class="table-wrapper">
+    
+        <table class="table table-striped" id="Tabla_Amortizaciones" style="margin-bottom: 2vw; border: black solid 2px;  width: 1200px;">
+            <thead>
+            <tr >
+                <th style="width:width: 400px; border: black solid 2px; background-color: #aeb1b3; text-align: center;">Mes</th>
+                <th style="width:width: 400px; border: black solid 2px; background-color: #aeb1b3; text-align: center;">Cuota</th>
+                <th style="width:width: 400px; border: black solid 2px; background-color: #aeb1b3; text-align: center;">Capital</th>
+                <th style="width:width: 400px; border: black solid 2px; background-color: #aeb1b3; text-align: center;">Interes</th>
+                <th style="width:width: 400px; border: black solid 2px; background-color: #aeb1b3; text-align: center;">Saldo</th>
+                <th style="width:width: 400px; border: black solid 2px; background-color: #aeb1b3; text-align: center;">Impuesto</th>
+            </tr>
+            </thead>
+    
+            <tbody>
+            ${c_detalle.map(d => `
+                <tr style="text-align: center;">
+                <td style="width:width: 400px; border: black solid 2px;">${d.mes}</td>
+                <td style="width:width: 400px; border: black solid 2px;">Q${d.cuota}</td>
+                <td style="width:width: 400px; border: black solid 2px;">Q${d.capital}</td>
+                <td style="width:width: 400px; border: black solid 2px;">Q${d.interes}</td>
+                <td style="width:width: 400px; border: black solid 2px;">Q${d.saldo}</td>
+                <td style="width:width: 400px; border: black solid 2px;">Q${d.impuesto}</td>
+                </tr>
+            `).join('')}
+            </tbody>
+        </table>
+    
+        </div>
+        </div>
+    
+        <hr>`;
+
+
+
 
         const tabla = document.getElementById('Detalles_Prestamo');
         tabla.style.display = 'block';
@@ -347,7 +404,7 @@ function sendEmail() {
             }
         }
     };
-    const message = encodeURIComponent(document.getElementById("Detalles_Prestamo").innerHTML);
+    const message = encodeURIComponent(document.getElementById("Formato_Correo").innerHTML);
     const correo = encodeURIComponent(document.getElementById("correo").value);
     const captchaResponse = grecaptcha.getResponse();
     const postData = `correo=${correo}&message=${message}&g-recaptcha-response=${captchaResponse}`;

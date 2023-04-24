@@ -4,6 +4,10 @@ background-color: aqua;
 margin: 0;
 }
 
+#Formato_Correo{
+    display: none;
+}
+
 #Mensaje_Flotante{
     font-family: 'Sofia Sans Condensed', sans-serif;
     font-size: large;
@@ -113,6 +117,7 @@ h2{
     color: white;
     background-color:  #16a81b; 
     padding-left: 1vw;
+    
 }
 
 #Logo{
@@ -163,10 +168,13 @@ label{
     justify-content: center;
     align-items: center;
     height: 100%;
+    
+   
   }
 
 .enviar{
     margin-top: 1rem;
+   
 }
 
 .btn {
