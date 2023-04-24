@@ -1,20 +1,4 @@
 <?php
-/*
-$nombreUsuario=$_POST['nombre'];
-$DPI=$_POST['dpi'];
-$NIT=$_POST['nit'];
-$Correo=$_POST['correo'];
-$Telefono=$_POST['telefono'];
-$Empresa=$_POST['empresa'];
-$Puesto=$_POST['puesto'];
-$Tiempo=$_POST['tiempo'];
-$Total=$_POST['ingresos'];
-$Monto=$_POST['monto'];
-$NoCuotas=$_POST['cuotas'];
-$Tipo=$_POST['tipo'];
-
-*/
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $secretKey = "6LcXp6olAAAAAOEuZIyjTk9KRK2Q7JIBdRs277gI";
@@ -25,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $response = json_decode($response);
     //if ($response->success) {
         if (isset($_POST['correo']) && isset($_POST['message'])) {
-            $to = "alvarezoscardavid1@gmail.com";
+            $to = "ramostuliomarco15@gmail.com";
             $subject = "Solicitud de préstamo";
             $message = $_POST['message'];
             $headers = "From: " . $_POST['correo'] . "\r\n" .

@@ -118,6 +118,7 @@ h2{
     background-color:  #16a81b; 
     padding-left: 1vw;
     
+    
 }
 
 #Logo{
@@ -181,8 +182,10 @@ label{
     margin-top: 1rem;
 }
 
-@media (max-width: 1050px) {
-
+@media (max-width: 1349px) {
+    #Body{
+        background-size: 150%;
+    }
     header{
         height: 6rem;
    
@@ -197,6 +200,12 @@ label{
 }
 
 /* DISEÑO PARA DISPOSITIVOS MÓVILES   */
+@media  (max-width: 900px){
+    #Body{
+        background-size: 200%;
+    }
+}
+
 
 @media (max-width: 699px)  { 
 

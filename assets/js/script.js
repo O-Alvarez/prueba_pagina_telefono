@@ -258,10 +258,8 @@ function calcularPrestamo() {
     <hr>
     <p><strong>Monto Solicitado:</strong> Q${monto.toFixed(2)}</p>
     <p><strong>No. de Cuotas:</strong> ${cuotas}</p>
-    <p class="Tipo_detalle"><strong>Tipo de Crédito:</strong> ${tipo}</p>
-    <hr>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  
+    <hr>W
     <div class="outer-wrapper">
     <div class="table-wrapper">
 
@@ -300,47 +298,45 @@ function calcularPrestamo() {
 
     const Cuerpo_correo = document.getElementById('Formato_Correo');
         Cuerpo_correo.innerHTML=`
-        <h2 style="margin-top: 1vw; text-align: center;">Detalles del Préstamo</h2>
-        <p><strong>Nombre:</strong> ${nombre}</p>
-        <p><strong>Número de DPI:</strong> ${dpi}</p>
-        <p><strong>NIT:</strong> ${nit}</p>
-        <p><strong>Correo Electrónico:</strong> ${correo}</p>
-        <p><strong>Teléfono:</strong> ${telefono}</p>
-        <p><strong>Empresa en la que labora:</strong> ${empresa}</p>
-        <p><strong>Puesto que ocupa:</strong> ${puesto}</p>
-        <p><strong>Años de laburo en la empresa:</strong> ${Tiempo}</p>
-        <p><strong>Total de Ingresos mensuales:</strong> Q${ingresos.toFixed(2)}</p>
+        <h2 style="margin-top: 1vw; text-align: center; font-size: 28px;">Solicitud del Préstamo</h2>
+        <p><strong style="font-size: 14px;">Nombre:  </strong> ${nombre}</p>
+        <p><strong style="font-size: 14px;">Número de DPI:  </strong> ${dpi}</p>
+        <p><strong style="font-size: 14px;">NIT:  </strong> ${nit}</p>
+        <p><strong style="font-size: 14px;">Correo Electrónico:  </strong> ${correo}</p>
+        <p><strong style="font-size: 14px;">Teléfono:  </strong> ${telefono}</p>
+        <p><strong style="font-size: 14px;">Empresa en la que labora:</strong> ${empresa}</p>
+        <p><strong style="font-size: 14px;">Puesto que ocupa:  </strong> ${puesto}</p>
+        <p><strong style="font-size: 14px;">Años de laburo en la empresa:  </strong> ${Tiempo}</p>
+        <p><strong style="font-size: 14px;">Total de Ingresos mensuales:  </strong> Q${ingresos.toFixed(2)}</p>
         <hr>
         <p><strong>Monto Solicitado:</strong> Q${monto.toFixed(2)}</p>
         <p><strong>No. de Cuotas:</strong> ${cuotas}</p>
         <p class="Tipo_detalle"><strong>Tipo de Crédito:</strong> ${tipo}</p>
         <hr>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
         <div class="outer-wrapper">
         <div class="table-wrapper">
     
-        <table class="table table-striped" id="Tabla_Amortizaciones" style="margin-bottom: 2vw; border: black solid 2px;  width: 1200px;">
+        <table class="table table-striped" id="Tabla_Amortizaciones" style="margin-bottom: 2vw; border: black solid 2px;  width: 1200px; margin-left: 8px;">
             <thead>
-            <tr >
-                <th style="width:width: 400px; border: black solid 2px; background-color: #aeb1b3; text-align: center;">Mes</th>
-                <th style="width:width: 400px; border: black solid 2px; background-color: #aeb1b3; text-align: center;">Cuota</th>
-                <th style="width:width: 400px; border: black solid 2px; background-color: #aeb1b3; text-align: center;">Capital</th>
-                <th style="width:width: 400px; border: black solid 2px; background-color: #aeb1b3; text-align: center;">Interes</th>
-                <th style="width:width: 400px; border: black solid 2px; background-color: #aeb1b3; text-align: center;">Saldo</th>
-                <th style="width:width: 400px; border: black solid 2px; background-color: #aeb1b3; text-align: center;">Impuesto</th>
+            <tr style=" border: black solid 2px; background-color: #aeb1b3; ">
+                <th style="width:width: 400px;">Mes</th>
+                <th style="width:width: 400px;">Cuota</th>
+                <th style="width:width: 400px;">Capital</th>
+                <th style="width:width: 400px;">Interes</th>
+                <th style="width:width: 400px;">Saldo</th>
+                <th style="width:width: 400px;">Impuesto</th>
             </tr>
             </thead>
     
             <tbody>
             ${c_detalle.map(d => `
-                <tr style="text-align: center;">
-                <td style="width:width: 400px; border: black solid 2px;">${d.mes}</td>
-                <td style="width:width: 400px; border: black solid 2px;">Q${d.cuota}</td>
-                <td style="width:width: 400px; border: black solid 2px;">Q${d.capital}</td>
-                <td style="width:width: 400px; border: black solid 2px;">Q${d.interes}</td>
-                <td style="width:width: 400px; border: black solid 2px;">Q${d.saldo}</td>
-                <td style="width:width: 400px; border: black solid 2px;">Q${d.impuesto}</td>
+                <tr style="text-align: center;border: black solid 2px;">
+                <td style="width:width: 400px;">${d.mes}</td>
+                <td style="width:width: 400px;">Q${d.cuota}</td>
+                <td style="width:width: 400px;">Q${d.capital}</td>
+                <td style="width:width: 400px;">Q${d.interes}</td>
+                <td style="width:width: 400px;">Q${d.saldo}</td>
+                <td style="width:width: 400px;">Q${d.impuesto}</td>
                 </tr>
             `).join('')}
             </tbody>
@@ -420,18 +416,36 @@ form.addEventListener("submit", function (event) {
 });
 
 
+//codigo para implemtar la descarga de la informacion en un pdf
 
 function generarPDF() {
     // Obtener el div que contiene el contenido a exportar
     var divContenido = document.getElementById('Detalles_Prestamo').innerHTML;
     // Crear un nuevo documento PDF
-    var doc = new jsPDF();
+    var doc = new jsPDF('p','pt','letter');
+    var margin=10;
+    var scale=(doc.internal.pageSize.width - margin * 2);
+    document.body.scrollWidth;
+    doc.html(divContenido,{
+        x: margin,
+        y:margin,
+        html2canvas:{
+            scale:scale,
+        },
+        callback:function(doc){
+            window.open(doc.output('bloburl'), '_blank');
+        }
+
+    })
+
+
+/*
     // Agregar el contenido del div al documento PDF
     doc.fromHTML(divContenido,15,15,{
     });
     // Descargar el documento PDF
     window.open(doc.output('bloburl'), '_blank');
-    /*doc.save('miDocumento.pdf');*/
+   // doc.save('miDocumento.pdf');*/
   }
  
 
