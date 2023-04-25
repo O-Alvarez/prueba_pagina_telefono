@@ -13,9 +13,11 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="assets/js/FileSaver.min.js"></script>
     <!-- load only jsPDF -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script type="module" src="assets/js/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body id="Body" class="container">
@@ -146,7 +148,7 @@
             <div class="enviar">
                 <input type="button" name="Enviar" id="Enviar_solicitud" class="btn btn-primary" onclick="sendEmail();"
                     value="Enviar">
-                <input type="button" name="Generar_PDF" id="Generar_PDF" class="btn btn-primary" onclick="generarPDF()" value="Descargar PDF">
+                <input type="button" name="Generar_PDF" id="Generar_PDF" class="btn btn-primary" onclick="generar_pdf()" value="Descargar PDF">
             </div>
         </div>
         <div id="Formato_Correo"></div>

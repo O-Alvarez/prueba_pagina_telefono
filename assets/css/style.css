@@ -185,6 +185,9 @@ label {
 }
 
 @media (max-width: 699px) {
+  #Mensaje_Flotante {
+  left: 0.2rem;
+  }
   #Contenedor {
     margin-top: 0;
   }

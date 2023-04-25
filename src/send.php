@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $response = json_decode($response);
     //if ($response->success) {
         if (isset($_POST['correo']) && isset($_POST['message'])) {
-            $to = "ramostuliomarco15@gmail.com";
+            $to = "alvarezoscardavi1@gmail.com";
             $subject = "Solicitud de préstamo";
             $message = $_POST['message'];
             $headers = "From: " . $_POST['correo'] . "\r\n" .
