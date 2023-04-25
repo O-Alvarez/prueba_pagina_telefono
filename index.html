@@ -30,85 +30,89 @@
             <h2>Información del Solicitante</h2>
             <div class="col-md-12">
                 <label for="nombre" class="form-label">Nombre Completo:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" required autocomplete="off">
-                <div class="valid-feedback">Looks good!</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <input type="text" class="form-control" id="nombre" name="nombre" required autocomplete="off"
+                    placeholder="Guillermo Lara">
+                <div class="valid-feedback">Ingresa como minimo un nombre y apellido</div>
+                <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6 col-12">
                 <label for="dpi" class="form-label">Número de DPI:</label>
                 <input type="text" class="form-control" id="dpi" name="dpi" required autocomplete="off" minlength="13"
-                    maxlength="13">
-                <div class="valid-feedback">Looks good!</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                    maxlength="13" placeholder="1234123451234">
+                <div class="valid-feedback">Ingresa un DPI valido de 13 digitos</div>
+                <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6 col-12">
                 <label for="nit" class="form-label">NIT:</label>
-                <input type="text" class="form-control" id="nit" name="nit" required autocomplete="off">
-                <div class="valid-feedback">Looks good!</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <input type="text" class="form-control" id="nit" name="nit" required autocomplete="off" minlength="6"
+                    placeholder="1235678-1">
+                <div class="valid-feedback">Ingresa un nit valido con guion -</div>
+                <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6 col-12">
                 <label for="correo" class="form-label">Correo Electrónico:</label>
-                <input type="email" class="form-control" id="correo" name="correo" required autocomplete="off">
-                <div class="valid-feedback">Looks good!</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <input type="email" class="form-control" id="correo" name="correo" required autocomplete="off"
+                    placeholder="tucorreo@servidor.com">
+                <div class="valid-feedback">Tu correo servira para enviarte la informacion de tramite, ingresa un correo
+                    valido</div>
+                <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6 col-12">
                 <label for="telefono" class="form-label">Teléfono:</label>
-                <input type="tel" class="form-control" id="telefono" name="telefono" required autocomplete="off">
-                <div class="valid-feedback">Looks good!</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <input type="tel" class="form-control" id="telefono" name="telefono" required autocomplete="off"
+                    minlength="8" maxlength="12" placeholder="12345678">
+                <div class="valid-feedback">Ingresa un telefono valido</div>
+                <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-12">
                 <label for="empresa" class="form-label">Empresa en la que labora:</label>
-                <input type="text" class="form-control" id="empresa" name="empresa" required autocomplete="off">
-                <div class="valid-feedback">Looks good!</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <input type="text" class="form-control" id="empresa" name="empresa" required autocomplete="off"
+                    minlength="8" placeholder="Empresa de guatemala, S.A.">
+                <div class="valid-feedback">Empresa de guatemala, S.A.</div>
+                <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-12">
                 <label for="puesto" class="form-label">Puesto que ocupa:</label>
-                <input type="text" class="form-control" id="puesto" name="puesto" required autocomplete="off">
-                <div class="valid-feedback">Looks good!</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <input type="text" class="form-control" id="puesto" name="puesto" required autocomplete="off"
+                    minlength="5" placeholder="Asesor de servicio al cliente">
+                <div class="valid-feedback">Ingresa en lo que te desempeñas</div>
+                <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6 col-12">
                 <label for="Tiempo_laborando" class="form-label">Tiempo laborando en la empresa (años):</label>
-                <input type="tel" class="form-control" id="Tiempo_laborando" name="tiempo" required autocomplete="off">
-                <div class="valid-feedback">Looks good!</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <input type="number" class="form-control" id="Tiempo_laborando" name="tiempo" required minlength="1"
+                    autocomplete="off" placeholder="1">
+                <div class="valid-feedback">El tiempo minimo para solocitar es de un año</div>
+                <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6 col-12">
                 <label for="ingresos" class="form-label">Total de ingresos mensuales:</label>
-                <input type="number" class="form-control" id="ingresos" name="ingresos" required autocomplete="off">
-                <div class="valid-feedback">Looks good!</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <input type="number" class="form-control" id="ingresos" name="ingresos" required autocomplete="off"
+                    placeholder="4000">
+                <div class="valid-feedback">Tu sueldo debe ser mayor a 3,500.00</div>
+                <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <h2>Información de Crédito a Solicitar</h2>
-            <div class="info mb-3">
-                <div class="col-md-12">
-                    <label for="monto" class="form-label">Monto Solicitado:</label>
-                    <input type="number" class="form-control" id="monto" name="monto" required
-                        onchange="MostrarTabla()">
-                    <div class="valid-feedback">Looks good!</div>
-                    <div class="invalid-feedback">Please fill out this field.</div>
-                </div>
-                <div class="col-md-12">
-                    <label for="cuotas" class="form-label">No. de Cuotas:</label>
-                    <input type="number" class="form-control" id="cuotas" name="cuotas" onchange="MostrarTabla()"
-                        required autocomplete="off">
-                    <div class="valid-feedback">Looks good!</div>
-                    <div class="invalid-feedback">Please fill out this field.</div>
-                </div>
-                <input type="text" disabled class="form-control" id="tipo" name="tipo" required autocomplete="off">
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
+            <div class="col-md-6 col-12">
+                <label for="monto" class="form-label">Monto Solicitado:</label>
+                <input type="number" class="form-control" id="monto" name="monto" required onchange="MostrarTabla()"
+                    placeholder="20000">
+                <div class="valid-feedback">El monto minimo es de Q5,000.00</div>
+                <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
+            <div class="col-md-6 col-12">
+                <label for="cuotas" class="form-label">No. de Cuotas:</label>
+                <input type="number" class="form-control" id="cuotas" name="cuotas" onchange="MostrarTabla()" required
+                    autocomplete="off" placeholder="48">
+                <div class="valid-feedback">Hasta un maximo de 120 cuotas disponibles</div>
+                <div class="invalid-feedback">Este campo es obligatorio</div>
+            </div>
+            <input type="text" disabled class="form-control" id="tipo" name="tipo" required autocomplete="off">
             <h2>Tabla de amortizaciones</h2>
             <div class="table-amortizacion mb-3">
                 <div id="Mostrar_Tabla">
                     <table class="table table-hover" id="Tabla_Mostrada">
-                        <thead>
+                        <thead class="table-primary">
                             <tr>
                                 <th>Mes</th>
                                 <th>Cuota</th>
