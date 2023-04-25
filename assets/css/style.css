@@ -32,9 +32,29 @@
   display: none;
   padding-left: 2vw;
   padding-right: 2vw;
-
   border: black solid;
   margin: top 2vw;
+}
+
+#Detalles_Prestamo h2{
+  margin-bottom: 1rem;
+}
+
+#Detalles_Prestamo strong {
+ font-size: 18px;
+ margin-right: 0.5rem;
+}
+
+.Detalles_texto{
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 1rem;
+  border-radius: 2px;
+  background-color: #e2e6eb86;
+}
+.detalles_monto{
+  margin-right: 2rem;
+  text-align: right;
 }
 
 #Mostrar_Tabla {
@@ -227,6 +247,7 @@ label {
   }
 
   #Detalles_Prestamo p {
+
     margin-left: 1rem;
   }
 
@@ -293,6 +314,12 @@ label {
   #Captcha {
     margin-top: 1.45rem;
   }
+  .Detalles_texto {
+    padding: 0;
+  }
+  .Detalles_texto p {
+    margin-right: 0;
+  }
 
   footer {
     margin: 0;
@@ -305,7 +332,6 @@ label {
     background-position: top;
     padding-bottom: 4.5rem;
   }
- 
 }
 
 /*Modificando*/

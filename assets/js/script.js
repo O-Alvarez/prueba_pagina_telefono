@@ -228,19 +228,19 @@ function calcularPrestamo() {
     // Mostramos el resultado en una tabla
     const resultadoDiv = document.getElementById("Detalles_Prestamo");
     resultadoDiv.innerHTML = `
-    <h2 style="margin-top: 1vw; text-align: center;">Detalles del Préstamo</h2>
-    <p><strong>Nombre:</strong> ${nombre}</p>
-    <p><strong>Número de DPI:</strong> ${dpi}</p>
-    <p><strong>NIT:</strong> ${nit}</p>
-    <p><strong>Correo Electrónico:</strong> ${correo}</p>
-    <p><strong>Teléfono:</strong> ${telefono}</p>
-    <p><strong>Empresa en la que labora:</strong> ${empresa}</p>
-    <p><strong>Puesto que ocupa:</strong> ${puesto}</p>
-    <p><strong>Años de laburo en la empresa:</strong> ${Tiempo}</p>
-    <p><strong>Total de Ingresos mensuales:</strong> Q${ingresos.toFixed(2)}</p>
+    <h2 style="margin-top: 1vw; text-align: center;">Detalles del Préstamo</h2></div>
+    <div class="Detalles_texto"><p><strong>Nombre:</strong> ${nombre}</p></div>
+    <div class="Detalles_texto"><p><strong>Número de DPI:</strong> ${dpi}</p></div>
+    <div class="Detalles_texto"><p><strong>NIT:</strong> ${nit}</p></div>
+    <div class="Detalles_texto"><p><strong>Correo Electrónico:</strong> ${correo}</p></div>
+    <div class="Detalles_texto"><p><strong>Teléfono:</strong> ${telefono}</p></div>
+    <div class="Detalles_texto"><p><strong>Empresa en la que labora:</strong> ${empresa}</p></div>
+    <div class="Detalles_texto"><p><strong>Puesto que ocupa:</strong> ${puesto}</p></div>
+    <div class="Detalles_texto"><p><strong>Años de laburo en la empresa:</strong> ${Tiempo}</p></div>
+    <div class="Detalles_texto"><p><strong>Total de Ingresos mensuales:</strong> Q${ingresos.toFixed(2)}</p></div>
     <hr>
-    <p><strong>Monto Solicitado:</strong> Q${monto.toFixed(2)}</p>
-    <p><strong>No. de Cuotas:</strong> ${cuotas}</p>
+    <div class="detalles_monto"><p><strong>Monto Solicitado:</strong> Q${monto.toFixed(2)}</p></div>
+    <div class="detalles_monto"><p><strong>No. de Cuotas:</strong> ${cuotas}</p></div>
     <hr>
     <div class="outer-wrapper">
     <div class="table-wrapper">
