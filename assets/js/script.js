@@ -249,12 +249,12 @@ function calcularPrestamo() {
     <table class="table table-striped" id="Tabla_Amortizaciones" style="margin-bottom: 2vw;">
         <thead>
         <tr >
-            <th>Mes</th>
-            <th>Cuota</th>
-            <th>Capital</th>
-            <th>Interes</th>
-            <th>Saldo</th>
-            <th>Impuesto</th>
+            <th scope="col">Mes</th>
+            <th scope="col">Cuota</th>
+            <th scope="col">Capital</th>
+            <th scope="col">Interes</th>
+            <th scope="col">Saldo</th>
+            <th scope="col">Impuesto</th>
         </tr>
         </thead>
 
@@ -263,7 +263,7 @@ function calcularPrestamo() {
           .map(
             (d) => `
             <tr>
-            <td>${d.mes}</td>
+            <th scope="row">${d.mes}</th>
             <td>Q${d.cuota}</td>
             <td>Q${d.capital}</td>
             <td>Q${d.interes}</td>
@@ -401,9 +401,13 @@ form.addEventListener("submit", function (event) {
 
 function generarPDF() {
   // Obtener el div que contiene el contenido a exportar
-  let divContenido = document.getElementById("Detalles_Prestamo").innerHTML;
-  // Crear un nuevo documento PDF
-  let doc = new jsPDF("p", "pt", "letter");
+  const contenido = document.getElementById("Detalles_Prestamo").innerHTML;
+  const pdf = new jsPDF("p", "pt", "letter");
+  pdf.fromHTML(contenido);
+  pdf.save("prestamo.pdf");
+
+
+  /*
   let margin = 10;
   let scale = doc.internal.pageSize.width - margin * 2;
   document.body.scrollWidth;

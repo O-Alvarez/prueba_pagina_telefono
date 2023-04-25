@@ -14,7 +14,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
     <script src="assets/js/FileSaver.min.js"></script>
-    <script src="assets/js/jspdf.min.js"></script>
+    <!-- load only jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 </head>
 
 <body id="Body" class="container">
@@ -39,14 +40,14 @@
                 <label for="dpi" class="form-label">Número de DPI:</label>
                 <input type="text" class="form-control" id="dpi" name="dpi" required autocomplete="off" minlength="13"
                     maxlength="13" placeholder="1234123451234">
-                <div class="valid-feedback">Ingresa un DPI valido de 13 digitos</div>
+                <div class="valid-feedback">Tu DPI es valido al tener 13 digitos</div>
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-6 col-12">
                 <label for="nit" class="form-label">NIT:</label>
                 <input type="text" class="form-control" id="nit" name="nit" required autocomplete="off" minlength="6"
                     placeholder="1235678-1">
-                <div class="valid-feedback">Ingresa un nit valido con guion -</div>
+                <div class="valid-feedback">Tu nit valido con guion o sin guion</div>
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-6 col-12">
@@ -61,7 +62,7 @@
                 <label for="telefono" class="form-label">Teléfono:</label>
                 <input type="tel" class="form-control" id="telefono" name="telefono" required autocomplete="off"
                     minlength="8" maxlength="12" placeholder="12345678">
-                <div class="valid-feedback">Ingresa un telefono valido</div>
+                <div class="valid-feedback">Tu telefono es valido</div>
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-12">
@@ -96,14 +97,14 @@
             <div class="col-md-6 col-12">
                 <label for="monto" class="form-label">Monto Solicitado:</label>
                 <input type="number" class="form-control" id="monto" name="monto" required onchange="MostrarTabla()"
-                    placeholder="20000">
+                    placeholder="20000" min="5000">
                 <div class="valid-feedback">El monto minimo es de Q5,000.00</div>
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-6 col-12">
                 <label for="cuotas" class="form-label">No. de Cuotas:</label>
                 <input type="number" class="form-control" id="cuotas" name="cuotas" onchange="MostrarTabla()" required
-                    autocomplete="off" placeholder="48">
+                    autocomplete="off" placeholder="48" max="120">
                 <div class="valid-feedback">Hasta un maximo de 120 cuotas disponibles</div>
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
@@ -145,7 +146,8 @@
             <div class="enviar">
                 <input type="button" name="Enviar" id="Enviar_solicitud" class="btn btn-primary" onclick="sendEmail();"
                     value="Enviar">
-                <input type="button" name="Enviar" id="Generar_PDF" class="btn btn-primary" onclick="generarPDF()">
+                <input type="button" name="Enviar" id="Generar_PDF" class="btn btn-primary" onclick="generarPDF()"
+                    value="Generar">
             </div>
         </div>
         <div id="Formato_Correo"></div>
