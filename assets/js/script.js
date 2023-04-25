@@ -241,8 +241,7 @@ function calcularPrestamo() {
     <hr>
     <p><strong>Monto Solicitado:</strong> Q${monto.toFixed(2)}</p>
     <p><strong>No. de Cuotas:</strong> ${cuotas}</p>
-  
-    <hr>W
+    <hr>
     <div class="outer-wrapper">
     <div class="table-wrapper">
 
