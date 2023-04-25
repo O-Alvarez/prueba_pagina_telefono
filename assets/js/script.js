@@ -403,8 +403,8 @@ function generarPDF() {
   const contenido = document.getElementById("Detalles_Prestamo").innerHTML;
   const pdf = new jsPDF("p", "pt", "letter");
   pdf.fromHTML(contenido);
-  pdf.save("prestamo.pdf");
-
+  window.open(pdf.output('bloburl'), '_blank');
+  //pdf.save("prestamo.pdf");
 
   /*
   let margin = 10;

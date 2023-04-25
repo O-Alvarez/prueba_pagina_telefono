@@ -190,6 +190,8 @@ label {
   }
 
   #Body {
+    padding: 0;
+    margin: 0;
     background-image: none;
     background-color: white;
     margin: 0%;
@@ -208,10 +210,10 @@ label {
   }
   #Logo {
     background-color: white;
-    padding: 3px;
+    padding: 6px;
     width: 8rem;
     vertical-align: middle;
-    margin-left: 0.5rem;
+    margin-left: 1.5rem;
   }
 
   #Detalles_Prestamo {
@@ -230,20 +232,17 @@ label {
     padding: 0;
   }
 
-  .table-wrapper th {
-    vertical-align: middle;
-    position: sticky;
-    top: 0;
-    height: 45px;
-    background-color: #aeb1b3;
-  }
-
   .table-wrapper {
     margin: auto;
     width: 95%;
     max-height: 255px;
     overflow: auto;
     overflow-x: auto;
+  }
+  .table-wrapper th {
+    vertical-align: middle;
+    top: 0;
+    height: 45px;
   }
 
   h2 {
@@ -297,13 +296,13 @@ label {
     height: 5rem;
     background-image: linear-gradient(to bottom, rgba(83, 120, 201, 0.301), rgba(0, 0, 255, 0.26)),
       url("../img/background.jpg");
-
     background-repeat: no-repeat;
     background-size: 100%;
     right: 0;
     background-position: top;
     padding-bottom: 4.5rem;
   }
+ 
 }
 
 /*Modificando*/
