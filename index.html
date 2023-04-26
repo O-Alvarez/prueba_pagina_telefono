@@ -16,8 +16,9 @@
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="assets/js/FileSaver.min.js"></script>
     <!-- load only jsPDF -->
-    <script type="module" src="assets/js/jspdf.plugin.autotable.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+        integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body id="Body" class="container">
@@ -35,21 +36,18 @@
                 <label for="nombre" class="form-label">Nombre Completo:</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required autocomplete="off"
                     placeholder="Guillermo Lara">
-                <div class="valid-feedback">Ingresa como minimo un nombre y apellido</div>
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-6 col-12 d-print-none">
                 <label for="dpi" class="form-label">Número de DPI:</label>
                 <input type="text" class="form-control" id="dpi" name="dpi" required autocomplete="off" minlength="13"
                     maxlength="13" placeholder="1234123451234">
-                <div class="valid-feedback">Tu DPI es valido al tener 13 digitos</div>
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-6 col-12 d-print-none">
                 <label for="nit" class="form-label">NIT:</label>
                 <input type="text" class="form-control" id="nit" name="nit" required autocomplete="off" minlength="6"
                     placeholder="1235678-1">
-                <div class="valid-feedback">Tu nit valido con guion o sin guion</div>
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-6 col-12 d-print-none">
@@ -61,38 +59,44 @@
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-6 col-12 d-print-none">
-                <label for="telefono" class="form-label">Teléfono:</label>
+                <label for="telefonoCasa" class="form-label">Teléfono de casa:</label>
+                <input type="tel" class="form-control" id="telefonoCasa" name="telefonoCasa" autocomplete="off"
+                    minlength="8" maxlength="12" placeholder="12345678">
+            </div>
+            <div class="col-md-6 col-12 d-print-none">
+                <label for="telefono" class="form-label">Teléfono Movil:</label>
                 <input type="tel" class="form-control" id="telefono" name="telefono" required autocomplete="off"
                     minlength="8" maxlength="12" placeholder="12345678">
-                <div class="valid-feedback">Tu telefono es valido</div>
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-12 d-print-none">
                 <label for="empresa" class="form-label">Empresa en la que labora:</label>
                 <input type="text" class="form-control" id="empresa" name="empresa" required autocomplete="off"
                     minlength="8" placeholder="Empresa de guatemala, S.A.">
-                <div class="valid-feedback">Empresa de guatemala, S.A.</div>
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-12 d-print-none">
                 <label for="puesto" class="form-label">Puesto que ocupa:</label>
                 <input type="text" class="form-control" id="puesto" name="puesto" required autocomplete="off"
                     minlength="5" placeholder="Asesor de servicio al cliente">
-                <div class="valid-feedback">Ingresa en lo que te desempeñas</div>
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-6 col-12 d-print-none">
-                <label for="Tiempo_laborando" class="form-label">Tiempo laborando en la empresa (años):</label>
-                <input type="number" class="form-control" id="Tiempo_laborando" name="tiempo" required minlength="1"
-                    autocomplete="off" placeholder="1">
-                <div class="valid-feedback">El tiempo minimo para solocitar es de un año</div>
+                <label for="telefonoEmpresa" class="form-label">Teléfono Movil:</label>
+                <input type="tel" class="form-control" id="telefonoEmpresa" name="telefonoEmpresa" required autocomplete="off"
+                    minlength="8" maxlength="12" placeholder="12345678">
+                <div class="invalid-feedback">Este campo es obligatorio</div>
+            </div>
+            <div class="col-md-6 col-12 d-print-none">
+                <label for="Tiempo_laborando" class="form-label">Tiempo laborando en la empresa:</label>
+                <input type="text" class="form-control" id="Tiempo_laborando" name="tiempo" required minlength="1"
+                    autocomplete="off" placeholder="1 año y 4 meses">
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-6 col-12 d-print-none">
                 <label for="ingresos" class="form-label">Total de ingresos mensuales:</label>
                 <input type="number" class="form-control" id="ingresos" name="ingresos" required autocomplete="off"
                     placeholder="4000" min="3500">
-                <div class="valid-feedback">Tu sueldo debe ser mayor a 3,500.00</div>
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <h2 class="d-print-none">Información de Crédito a Solicitar</h2>
@@ -100,14 +104,12 @@
                 <label for="monto" class="form-label">Monto Solicitado:</label>
                 <input type="number" class="form-control" id="monto" name="monto" required onchange="MostrarTabla()"
                     placeholder="20000" min="5000">
-                <div class="valid-feedback">El monto minimo es de Q5,000.00</div>
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-6 col-12 d-print-none">
                 <label for="cuotas" class="form-label">No. de Cuotas:</label>
                 <input type="number" class="form-control" id="cuotas" name="cuotas" onchange="MostrarTabla()" required
-                    autocomplete="off" placeholder="48" max="120">
-                <div class="valid-feedback">Hasta un maximo de 120 cuotas disponibles</div>
+                    autocomplete="off" placeholder="48" min="1" max="60">
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <input type="text" disabled class="form-control" id="tipo" name="tipo" required autocomplete="off">
@@ -151,9 +153,10 @@
         <div class="container-sm d-print-none" id="Enviar_Recaptcha">
             <div class="g-recaptcha" data-sitekey="6LcXp6olAAAAAKiXut9OKx6ClO-STCFDYIMronUq" id="miCaptcha"></div>
             <div class="enviar">
-               <!-- <input type="button" name="Generar_PDF" id="Generar_PDF" class="btn btn-primary" onclick="generar_pdf()" value="Descargar PDF">-->
-                <input type="button" name="Enviar" id="Enviar_solicitud" class="btn btn-primary d-print-none" onclick="sendEmail();"
-                    value="Enviar">
+                <input type="button" name="Generar_PDF" id="Generar_PDF" class="btn btn-primary" onclick="generar_pdf()"
+                    value="Descargar PDF">
+                <input type="button" name="Enviar" id="Enviar_solicitud" class="btn btn-primary d-print-none"
+                    onclick="sendEmail();" value="Enviar">
             </div>
         </div>
         <div id="Formato_Correo"></div>
@@ -185,4 +188,3 @@
 </script>
 
 </html>
-

@@ -60,11 +60,11 @@ function MostrarTabla() {
        (d) => `
        <tr>
        <td>${d.mes}</td>
-       <td>Q${d.cuota}</td>
-       <td>Q${d.capital}</td>
-       <td>Q${d.interes}</td>
-       <td>Q${d.saldo}</td>
-       <td>Q${d.impuesto}</td>
+       <td>Q ${d.cuota}</td>
+       <td>Q ${d.capital}</td>
+       <td>Q ${d.interes}</td>
+       <td>Q ${d.saldo}</td>
+       <td>Q ${d.impuesto}</td>
        </tr>
    `
      )
@@ -107,7 +107,7 @@ function MostrarTabla() {
 
       const resultadoDiv = document.getElementById("Mostrar_Tabla");
       resultadoDiv.innerHTML = `<table class="table table-striped" id="Tabla_Amortizaciones">
-    <thead>
+    <thead class="table-primary">
     <tr>
         <th>Mes</th>
         <th>Cuota</th>
@@ -123,11 +123,11 @@ function MostrarTabla() {
         (d) => `
         <tr>
         <td>${d.mes}</td>
-        <td>Q${d.cuota}</td>
-        <td>Q${d.capital}</td>
-        <td>Q${d.interes}</td>
-        <td>Q${d.saldo}</td>
-        <td>Q${d.impuesto}</td>
+        <td><b>Q ${d.cuota}</b></td>
+        <td>Q ${d.capital}</td>
+        <td>Q ${d.interes}</td>
+        <td>Q ${d.saldo}</td>
+        <td>Q ${d.impuesto}</td>
         </tr>
     `
       )
@@ -237,15 +237,15 @@ function calcularPrestamo() {
     <div class="Detalles_texto"><p><strong>Empresa en la que labora:</strong> ${empresa}</p></div>
     <div class="Detalles_texto"><p><strong>Puesto que ocupa:</strong> ${puesto}</p></div>
     <div class="Detalles_texto"><p><strong>Años de laburo en la empresa:</strong> ${Tiempo}</p></div>
-    <div class="Detalles_texto"><p><strong>Total de Ingresos mensuales:</strong> Q${ingresos.toFixed(2)}</p></div>
+    <div class="Detalles_texto"><p><strong>Total de Ingresos mensuales:</strong> Q ${ingresos.toFixed(2)}</p></div>
     <hr>
-    <div class="detalles_monto"><p><strong>Monto Solicitado:</strong> Q${monto.toFixed(2)}</p></div>
+    <div class="detalles_monto"><p><strong>Monto Solicitado:</strong> Q ${monto.toFixed(2)}</p></div>
     <div class="detalles_monto"><p><strong>No. de Cuotas:</strong> ${cuotas}</p></div>
     <hr>
     <div class="outer-wrapper">
       <div class="table-wrapper">
         <table class="table table-striped" id="Tabla_Amortizaciones" style="margin-bottom: 2vw;">
-          <thead>
+          <thead class="table-primary">
             <tr>
               <th scope="col">Mes</th>
               <th scope="col">Cuota</th>
@@ -261,11 +261,11 @@ function calcularPrestamo() {
               (d) => `
             <tr>
               <th scope="row">${d.mes}</th>
-              <td>Q${d.cuota}</td>
-              <td>Q${d.capital}</td>
-              <td>Q${d.interes}</td>
-              <td>Q${d.saldo}</td>
-              <td>Q${d.impuesto}</td>
+              <td>Q ${d.cuota}</td>
+              <td>Q ${d.capital}</td>
+              <td>Q ${d.interes}</td>
+              <td>Q ${d.saldo}</td>
+              <td>Q ${d.impuesto}</td>
             </tr>
         `
             )
@@ -275,8 +275,8 @@ function calcularPrestamo() {
       </div>
     </div>
     <hr>
-    <!--<p><strong>Total a pagar:</strong> Q${totalPagar.toFixed(2)}</p>
-    <p><strong>Total de intereses:</strong> Q${totalInteres.toFixed(2)}</p>-->`;
+    <!--<p><strong>Total a pagar:</strong> Q ${totalPagar.toFixed(2)}</p>
+    <p><strong>Total de intereses:</strong> Q ${totalInteres.toFixed(2)}</p>-->`;
 
     const Cuerpo_correo = document.getElementById("Formato_Correo");
     Cuerpo_correo.innerHTML = `
@@ -289,9 +289,9 @@ function calcularPrestamo() {
         <p><strong style="font-size: 14px;">Empresa en la que labora:</strong> ${empresa}</p>
         <p><strong style="font-size: 14px;">Puesto que ocupa:  </strong> ${puesto}</p>
         <p><strong style="font-size: 14px;">Años de laburo en la empresa:  </strong> ${Tiempo}</p>
-        <p><strong style="font-size: 14px;">Total de Ingresos mensuales:  </strong> Q${ingresos.toFixed(2)}</p>
+        <p><strong style="font-size: 14px;">Total de Ingresos mensuales:  </strong> Q ${ingresos.toFixed(2)}</p>
         <hr>
-        <p><strong>Monto Solicitado:</strong> Q${monto.toFixed(2)}</p>
+        <p><strong>Monto Solicitado:</strong> Q ${monto.toFixed(2)}</p>
         <p><strong>No. de Cuotas:</strong> ${cuotas}</p>
         <p class="Tipo_detalle"><strong>Tipo de Crédito:</strong> ${tipo}</p>
         <hr>
@@ -316,11 +316,11 @@ function calcularPrestamo() {
                 (d) => `
                 <tr style="text-align: center;border: black solid 2px;">
                   <th scope="row" style="width:width: 400px;">${d.mes}</th>
-                  <td style="width:width: 400px;">Q${d.cuota}</td>
-                  <td style="width:width: 400px;">Q${d.capital}</td>
-                  <td style="width:width: 400px;">Q${d.interes}</td>
-                  <td style="width:width: 400px;">Q${d.saldo}</td>
-                  <td style="width:width: 400px;">Q${d.impuesto}</td>
+                  <td style="width:width: 400px;">Q ${d.cuota}</td>
+                  <td style="width:width: 400px;">Q ${d.capital}</td>
+                  <td style="width:width: 400px;">Q ${d.interes}</td>
+                  <td style="width:width: 400px;">Q ${d.saldo}</td>
+                  <td style="width:width: 400px;">Q ${d.impuesto}</td>
                 </tr>
             `
               )
@@ -394,17 +394,11 @@ form.addEventListener("submit", function (event) {
 
 //codigo para implemtar la descarga de la informacion en un pdf
 
-function generarPDF() {
+function generar_pdf() {
   // Obtener el div que contiene el contenido a exportar
   const pdf = new jsPDF("p", "pt", "letter");
-  var specialElementHandlers = {
-    "#editor": function (element, renderer) {
-      return true;
-    },
-  };
   pdf.fromHTML($("#pdfGenerado").html(), 15, 15, {
     width: 170,
-    elementHandlers: specialElementHandlers,
   });
   pdf.fromHTML(contenido);
   window.open(pdf.output("bloburl"), "_blank");
