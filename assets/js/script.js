@@ -243,41 +243,37 @@ function calcularPrestamo() {
     <div class="detalles_monto"><p><strong>No. de Cuotas:</strong> ${cuotas}</p></div>
     <hr>
     <div class="outer-wrapper">
-    <div class="table-wrapper">
-
-    <table class="table table-striped" id="Tabla_Amortizaciones" style="margin-bottom: 2vw;">
-        <thead>
-        <tr >
-            <th scope="col">Mes</th>
-            <th scope="col">Cuota</th>
-            <th scope="col">Capital</th>
-            <th scope="col">Interes</th>
-            <th scope="col">Saldo</th>
-            <th scope="col">Impuesto</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        ${c_detalle
-          .map(
-            (d) => `
+      <div class="table-wrapper">
+        <table class="table table-striped" id="Tabla_Amortizaciones" style="margin-bottom: 2vw;">
+          <thead>
             <tr>
-            <th scope="row">${d.mes}</th>
-            <td>Q${d.cuota}</td>
-            <td>Q${d.capital}</td>
-            <td>Q${d.interes}</td>
-            <td>Q${d.saldo}</td>
-            <td>Q${d.impuesto}</td>
+              <th scope="col">Mes</th>
+              <th scope="col">Cuota</th>
+              <th scope="col">Capital</th>
+              <th scope="col">Interes</th>
+              <th scope="col">Saldo</th>
+              <th scope="col">Impuesto</th>
+            </tr>
+          </thead>
+          <tbody>
+          ${c_detalle
+            .map(
+              (d) => `
+            <tr>
+              <th scope="row">${d.mes}</th>
+              <td>Q${d.cuota}</td>
+              <td>Q${d.capital}</td>
+              <td>Q${d.interes}</td>
+              <td>Q${d.saldo}</td>
+              <td>Q${d.impuesto}</td>
             </tr>
         `
-          )
-          .join("")}
-        </tbody>
-    </table>
-
+            )
+            .join("")}
+          </tbody>
+        </table>
+      </div>
     </div>
-    </div>
-
     <hr>
     <!--<p><strong>Total a pagar:</strong> Q${totalPagar.toFixed(2)}</p>
     <p><strong>Total de intereses:</strong> Q${totalInteres.toFixed(2)}</p>-->`;
@@ -305,12 +301,12 @@ function calcularPrestamo() {
         <table class="table table-striped" id="Tabla_Amortizaciones" style="margin-bottom: 2vw; border: black solid 2px;  width: 1200px; margin-left: 8px;">
             <thead>
             <tr style=" border: black solid 2px; background-color: #aeb1b3; ">
-                <th style="width:width: 400px;">Mes</th>
-                <th style="width:width: 400px;">Cuota</th>
-                <th style="width:width: 400px;">Capital</th>
-                <th style="width:width: 400px;">Interes</th>
-                <th style="width:width: 400px;">Saldo</th>
-                <th style="width:width: 400px;">Impuesto</th>
+                <th scope="col" style="width:width: 400px;">Mes</th>
+                <th scope="col" style="width:width: 400px;">Cuota</th>
+                <th scope="col" style="width:width: 400px;">Capital</th>
+                <th scope="col" style="width:width: 400px;">Interes</th>
+                <th scope="col" style="width:width: 400px;">Saldo</th>
+                <th scope="col" style="width:width: 400px;">Impuesto</th>
             </tr>
             </thead>
     
@@ -319,12 +315,12 @@ function calcularPrestamo() {
               .map(
                 (d) => `
                 <tr style="text-align: center;border: black solid 2px;">
-                <td style="width:width: 400px;">${d.mes}</td>
-                <td style="width:width: 400px;">Q${d.cuota}</td>
-                <td style="width:width: 400px;">Q${d.capital}</td>
-                <td style="width:width: 400px;">Q${d.interes}</td>
-                <td style="width:width: 400px;">Q${d.saldo}</td>
-                <td style="width:width: 400px;">Q${d.impuesto}</td>
+                  <th scope="row" style="width:width: 400px;">${d.mes}</th>
+                  <td style="width:width: 400px;">Q${d.cuota}</td>
+                  <td style="width:width: 400px;">Q${d.capital}</td>
+                  <td style="width:width: 400px;">Q${d.interes}</td>
+                  <td style="width:width: 400px;">Q${d.saldo}</td>
+                  <td style="width:width: 400px;">Q${d.impuesto}</td>
                 </tr>
             `
               )
@@ -400,10 +396,22 @@ form.addEventListener("submit", function (event) {
 
 function generarPDF() {
   // Obtener el div que contiene el contenido a exportar
-  const contenido = document.getElementById("Detalles_Prestamo").innerHTML;
   const pdf = new jsPDF("p", "pt", "letter");
+  var specialElementHandlers = {
+    "#editor": function (element, renderer) {
+      return true;
+    },
+  };
+  pdf.fromHTML($("#pdfGenerado").html(), 15, 15, {
+    width: 170,
+    elementHandlers: specialElementHandlers,
+  });
   pdf.fromHTML(contenido);
-  window.open(pdf.output('bloburl'), '_blank');
+  window.open(pdf.output("bloburl"), "_blank");
+  function downloadPDFWithBrowserPrint() {
+    window.print();
+  }
+  document.querySelector("#browserPrint").addEventListener("click", downloadPDFWithBrowserPrint);
   //pdf.save("prestamo.pdf");
 
   /*

@@ -142,6 +142,11 @@ label {
   overflow: auto;
   overflow-x: auto;
 }
+@media print {
+  .table-wrapper {
+    max-height: none;
+  }
+}
 
 #Mostrar_Tabla {
   width: 100%;
@@ -149,6 +154,11 @@ label {
   overflow-x: auto;
   overflow-y: auto;
   max-height: 450px;
+}
+@media print {
+  #Mostrar_Tabla {
+    max-height: none;
+  }
 }
 
 #tipo {
@@ -263,6 +273,11 @@ label {
     overflow: auto;
     overflow-x: auto;
   }
+  @media print {
+    .table-wrapper {
+      max-height: none;
+    }
+  }
   .table-wrapper th {
     vertical-align: middle;
     top: 0;
@@ -280,6 +295,12 @@ label {
     overflow-y: auto;
     max-height: 250px;
   }
+  @media print {
+    #Mostrar_Tabla {
+      max-height: none;
+    }
+  }
+
   #Mostrar_Tabla table {
     margin-left: 0;
     margin-right: 0;
