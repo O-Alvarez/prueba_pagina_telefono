@@ -448,7 +448,7 @@ function Mensaje_Enviado(){
   Contenedor.innerHTML=`<div class="Mensaje_exitoso">
   <h2>La solicitud ha sido enviada correctamente</h2>
   <p>En su correo electronico podrá verificar que la solicitud ha sido enviada correctamente. </p>
-  >p>En caso de no recibirlo:<p>
+  <p>En caso de no recibirlo:<p>
   <ol>
       <li> Compruebe que el mensaje se encuentre en la carpeta de spam.</li>
       <li> Verifique que el correo proporcionado está correctamente escrito.</li>

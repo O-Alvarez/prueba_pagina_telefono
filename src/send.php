@@ -15,10 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 "Reply-To: " . $_POST['correo'] . "\r\n" .
                 "Content-type: text/html; charset=UTF-8\r\n";
             $de= $_POST['correo'];
-            $asunto="Solicitud De Prestamos";
+            $asunto="Solicitud De Préstamo";
             $mensaje="
             <p>Buen día</p>
-            <p>Nos alegra comunicarte que tu solicitud de Préstamos, ha sido enviada <strong>Correctamente</strong>, por lo que, nos estaremos comunicando contigo.</p>
+            <p>Nos alegra comunicarte que tu solicitud de préstamo, ha sido enviada <strong>Correctamente</strong>, por lo que, nos estaremos comunicando contigo.</p>
             <p>Atte:</p>
             <p>Easy Capital</p>";
             $headers1 = "From: " . "solicitud.prestamosec@gmail.com" . "\r\n" .
