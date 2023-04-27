@@ -8,7 +8,7 @@ function MostrarTabla() {
   const tipo = document.getElementById("tipo").value;
   let tasaInteres;
 
-  if (monto >= 20000) {
+  if (monto > 20000) {
     const credito = document.getElementById("tipo");
     credito.value = "Sobre Saldos";
     tasaInteres = 1.5 / 100;
@@ -75,7 +75,7 @@ function MostrarTabla() {
   }
 
   //CALCULOS PARA TABLA FLAT
-  else if (monto < 20000 && monto > 0) {
+  else if (monto <= 20000 && monto > 0) {
     const credito = document.getElementById("tipo");
     credito.value = "Flat";
     tasaInteres = 3.5 / 100;
@@ -159,7 +159,7 @@ function calcularPrestamo() {
   //se verifica si el DPI es correcto
 
   if (dpi.length === 13) {
-    if (monto >= 20000) {
+    if (monto > 20000) {
       const credito = document.getElementById("tipo");
       credito.value = "Sobre Saldos";
       tasaInteres = 1.5 / 100;
@@ -193,7 +193,7 @@ function calcularPrestamo() {
           impuesto: s_Impuesto.toFixed(2),
         });
       }
-    } else if (monto < 20000 && monto > 0) {
+    } else if (monto <= 20000 && monto > 0) {
       const credito = document.getElementById("tipo");
       credito.value = "Flat";
       tasaInteres = 3.5 / 100;

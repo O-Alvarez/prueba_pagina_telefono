@@ -19,6 +19,7 @@
 }
 
 #Boton_generar_solicitud {
+  
   text-align: center;
   margin-top: 1.4rem;
   margin-bottom: 1.5rem;
@@ -76,12 +77,12 @@
 }
 
 #Enviar_solicitud {
-  background-color: #44a848;
+  background-color: #444444;
   border: none;
 }
 
 #Boton {
-  background-color: #44a848;
+  background-color: #444444;
   border: none;
 }
 
@@ -108,7 +109,7 @@ header {
 }
 h1 {
   border-radius: 3px;
-  background-color: #148517;
+  background-color: #444444;
   color: white !important;
   margin: 1vwS;
   text-align: center;
@@ -121,7 +122,7 @@ h2 {
   margin-bottom: 2rem;
   border-radius: 3px;
   color: white !important;
-  background-color: #16a81b;
+  background-color: #444444;
   padding-left: 1vw;
 }
 
