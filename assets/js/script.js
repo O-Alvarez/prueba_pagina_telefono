@@ -152,6 +152,8 @@ function calcularPrestamo() {
   const cuotas = parseInt(document.getElementById("cuotas").value);
   const tipo = document.getElementById("tipo").value;
   const Tiempo = document.getElementById("Tiempo_laborando").value;
+  const TelefonoEmpresa= document.getElementById("telefonoEmpresa").value;
+  const TelefonoCasa= document.getElementById("telefonoCasa").value;
 
   const totalInteres = 0;
   const totalPagar = 0;
@@ -229,12 +231,16 @@ function calcularPrestamo() {
     const resultadoDiv = document.getElementById("Detalles_Prestamo");
     resultadoDiv.innerHTML = `
     <h2 style="margin-top: 1vw; text-align: center;">Detalles del Préstamo</h2></div>
+    <p style="margin-left: 1rem; font-size: 22px;"><strong> Datos personales </strong></p>
     <div class="Detalles_texto"><p><strong>Nombre:</strong> ${nombre}</p></div>
     <div class="Detalles_texto"><p><strong>Número de DPI:</strong> ${dpi}</p></div>
     <div class="Detalles_texto"><p><strong>NIT:</strong> ${nit}</p></div>
     <div class="Detalles_texto"><p><strong>Correo Electrónico:</strong> ${correo}</p></div>
     <div class="Detalles_texto"><p><strong>Teléfono:</strong> ${telefono}</p></div>
+    <div class="Detalles_texto"><p><strong>Teléfono de Casa:</strong> ${TelefonoCasa}</p></div>
+    <p style="margin-left: 1rem; font-size: 22px;"><strong> Datos Laborales </strong></p>
     <div class="Detalles_texto"><p><strong>Empresa en la que labora:</strong> ${empresa}</p></div>
+    <div class="Detalles_texto"><p><strong>Teléfono de la empresa:</strong> ${TelefonoEmpresa}</p></div>
     <div class="Detalles_texto"><p><strong>Puesto que ocupa:</strong> ${puesto}</p></div>
     <div class="Detalles_texto"><p><strong>Años de laburo en la empresa:</strong> ${Tiempo}</p></div>
     <div class="Detalles_texto"><p><strong>Total de Ingresos mensuales:</strong> Q ${ingresos.toFixed(2)}</p></div>
@@ -280,21 +286,24 @@ function calcularPrestamo() {
 
     const Cuerpo_correo = document.getElementById("Formato_Correo");
     Cuerpo_correo.innerHTML = `
-        <h2 style="margin-top: 1vw; text-align: center; font-size: 28px;">Solicitud del Préstamo</h2>
-        <p><strong style="font-size: 14px;">Nombre:  </strong> ${nombre}</p>
-        <p><strong style="font-size: 14px;">Número de DPI:  </strong> ${dpi}</p>
-        <p><strong style="font-size: 14px;">NIT:  </strong> ${nit}</p>
-        <p><strong style="font-size: 14px;">Correo Electrónico:  </strong> ${correo}</p>
-        <p><strong style="font-size: 14px;">Teléfono:  </strong> ${telefono}</p>
-        <p><strong style="font-size: 14px;">Empresa en la que labora:</strong> ${empresa}</p>
-        <p><strong style="font-size: 14px;">Puesto que ocupa:  </strong> ${puesto}</p>
-        <p><strong style="font-size: 14px;">Años de laburo en la empresa:  </strong> ${Tiempo}</p>
-        <p><strong style="font-size: 14px;">Total de Ingresos mensuales:  </strong> Q ${ingresos.toFixed(2)}</p>
-        <hr>
-        <p><strong>Monto Solicitado:</strong> Q ${monto.toFixed(2)}</p>
-        <p><strong>No. de Cuotas:</strong> ${cuotas}</p>
-        <p class="Tipo_detalle"><strong>Tipo de Crédito:</strong> ${tipo}</p>
-        <hr>
+    <h2 style="margin-top: 1vw; text-align: center; font-size:20px">Detalles del Préstamo</h2></div>
+    <p style="margin-left: 1rem; font-size: 15px;"><strong> Datos personales </strong></p>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Nombre:</strong> ${nombre}</p></div>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Número de DPI:</strong> ${dpi}</p></div>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">NIT:</strong> ${nit}</p></div>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Correo Electrónico:</strong> ${correo}</p></div>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Teléfono:</strong> ${telefono}</p></div>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Teléfono de Casa:</strong> ${TelefonoCasa}</p></div>
+    <p style="margin-left: 1rem; font-size: 15px;"><strong> Datos Laborales </strong></p>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Empresa en la que labora:</strong> ${empresa}</p></div>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Teléfono de la empresa:</strong> ${TelefonoEmpresa}</p></div>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Puesto que ocupa:</strong> ${puesto}</p></div>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Años de laburo en la empresa:</strong> ${Tiempo}</p></div>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Total de Ingresos mensuales:</strong> Q ${ingresos.toFixed(2)}</p></div>
+    <hr>
+    <div class="detalles_monto" style="font-size: 14px;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Monto Solicitado:</strong> Q ${monto.toFixed(2)}</p></div>
+    <div class="detalles_monto" style="font-size: 14px;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">No. de Cuotas:</strong> ${cuotas}</p></div>
+    <hr>
         <div class="outer-wrapper">
         <div class="table-wrapper">
     
@@ -372,7 +381,8 @@ function sendEmail() {
     if (xhr.readyState == 4 && xhr.status == 200) {
       let response = JSON.parse(xhr.responseText);
       if (response.success) {
-        alert("El correo se ha enviado correctamente.");
+        Mensaje_Enviado();
+        
       } else {
         alert(response.message);
       }
@@ -430,4 +440,18 @@ function generar_pdf() {
     // Descargar el documento PDF
     window.open(doc.output('bloburl'), '_blank');
    // doc.save('miDocumento.pdf');*/
+}
+
+
+function Mensaje_Enviado(){
+  const Contenedor= document.getElementById("Contenedor");
+  Contenedor.innerHTML=`<div class="Mensaje_exitoso">
+  <h2>La solicitud ha sido enviada correctamente</h2>
+  <p>En su correo electronico podrá verificar que la solicitud ha sido enviada correctamente. </p>
+  >p>En caso de no recibirlo:<p>
+  <ol>
+      <li> Compruebe que el mensaje se encuentre en la carpeta de spam.</li>
+      <li> Verifique que el correo proporcionado está correctamente escrito.</li>
+  </ol>
+</div>`;
 }

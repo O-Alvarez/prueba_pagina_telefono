@@ -82,7 +82,7 @@
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-6 col-12 d-print-none">
-                <label for="telefonoEmpresa" class="form-label">Teléfono Movil:</label>
+                <label for="telefonoEmpresa" class="form-label">Número de teléfono de la empresa:</label>
                 <input type="tel" class="form-control" id="telefonoEmpresa" name="telefonoEmpresa" required autocomplete="off"
                     minlength="8" maxlength="12" placeholder="12345678">
                 <div class="invalid-feedback">Este campo es obligatorio</div>
@@ -96,14 +96,14 @@
             <div class="col-md-6 col-12 d-print-none">
                 <label for="ingresos" class="form-label">Total de ingresos mensuales:</label>
                 <input type="number" class="form-control" id="ingresos" name="ingresos" required autocomplete="off"
-                    placeholder="4000" min="3500">
+                    placeholder="4000" min="500">
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <h2 class="d-print-none">Información de Crédito a Solicitar</h2>
             <div class="col-md-6 col-12 d-print-none">
                 <label for="monto" class="form-label">Monto Solicitado:</label>
                 <input type="number" class="form-control" id="monto" name="monto" required onchange="MostrarTabla()"
-                    placeholder="20000" min="5000">
+                    placeholder="20000" min="1">
                 <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="col-md-6 col-12 d-print-none">
@@ -153,8 +153,7 @@
         <div class="container-sm d-print-none" id="Enviar_Recaptcha">
             <div class="g-recaptcha" data-sitekey="6LcXp6olAAAAAKiXut9OKx6ClO-STCFDYIMronUq" id="miCaptcha"></div>
             <div class="enviar">
-                <input type="button" name="Generar_PDF" id="Generar_PDF" class="btn btn-primary" onclick="generar_pdf()"
-                    value="Descargar PDF">
+               
                 <input type="button" name="Enviar" id="Enviar_solicitud" class="btn btn-primary d-print-none"
                     onclick="sendEmail();" value="Enviar">
             </div>

@@ -203,9 +203,19 @@ label {
   #Logo {
     width: 10rem;
     margin-bottom: 0.2rem;
-    margin-top: 0.2rem;
+    margin-top: 0.6rem;
     margin-left: 0.5rem;
   }
+}
+.Mensaje_exitoso{
+  font-size: 25px;
+  margin-bottom: 2rem;
+}
+.Mensaje_exitoso h2{
+  text-align: center;
+}
+.Mensaje_exitoso p{
+  margin-top: 2rem;
 }
 
 /* DISEÑO PARA DISPOSITIVOS MÓVILES   */
@@ -220,26 +230,27 @@ label {
   left: 0.2rem;
   }
   #Contenedor {
-    margin-top: 0;
+    margin-top: 1rem;
   }
 
   #Body {
     padding: 0;
     margin: 0;
-    background-image: none;
-    background-color: white;
+   /* background-image: none;
+    background-color: white;*/
+    background-size: 100rem;
     margin: 0%;
   }
 
   header {
     height: 5rem;
-    background-image: linear-gradient(to bottom, rgba(83, 120, 201, 0.301), rgba(0, 0, 255, 0.26)),
+   /* background-image: linear-gradient(to bottom, rgba(83, 120, 201, 0.301), rgba(0, 0, 255, 0.26)),
       url("../img/background.jpg");
 
     background-repeat: no-repeat;
     background-size: 100%;
     right: 0;
-    background-position: top;
+    background-position: top;*/
     padding-bottom: 4.5rem;
   }
   #Logo {
@@ -273,6 +284,7 @@ label {
     max-height: 255px;
     overflow: auto;
     overflow-x: auto;
+
   }
   @media print {
     .table-wrapper {
@@ -353,6 +365,17 @@ label {
     right: 0;
     background-position: top;
     padding-bottom: 4.5rem;
+  }
+  .Mensaje_exitoso{
+    margin-top: 1rem;
+    font-size: 15px;
+    margin-bottom: 1rem;
+  }
+  .Mensaje_exitoso h2{
+    text-align: center;
+  }
+  .Mensaje_exitoso p{
+    margin-top: 1rem;
   }
 }
 
