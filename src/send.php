@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $response = json_decode($response);
     if ($response->success) {
         if (isset($_POST['correo']) && isset($_POST['message'])) {
-            $to = "solicitud.prestamosec@gmail.com";
+            $to = "contabilidad@inssafreight.com.gt";
             $subject = "Solicitud de préstamo";
             $message = $_POST['message'];
             $headers = "From: " . $_POST['correo'] . "\r\n" .
@@ -24,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p>Nos alegra comunicarte que tu solicitud de préstamo, ha sido enviada <strong>Correctamente</strong>, por lo que, nos estaremos comunicando contigo.</p>
                 <p>Atte:</p>
                 <p>Easy Capital</p>";
-                $headers1 = "From: " . "solicitud.prestamosec@gmail.com" . "\r\n" .
-                "Reply-To: " . "solicitud.prestamosec@gmail.com". "\r\n" .
+                $headers1 = "From: " . "contabilidad@inssafreight.com.gt" . "\r\n" .
+                "Reply-To: " . "contabilidad@inssafreight.com.gt". "\r\n" .
                 "Content-type: text/html; charset=UTF-8\r\n";
                 mail($de,$asunto,$mensaje,$headers1);
                 echo json_encode(array("success" => true));
