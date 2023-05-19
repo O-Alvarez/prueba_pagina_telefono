@@ -1,0 +1,1 @@
+[15-May-2023 17:06:52 UTC] PHP Warning:  mail(): Could not execute mail delivery program '/usr/sbin/sendmail -t -i' in /home/bmlgtco1/public_html/src/send.php on line 19

@@ -11,7 +11,7 @@ function MostrarTabla() {
   if (monto > 20000) {
     const credito = document.getElementById("tipo");
     credito.value = "Sobre Saldos";
-    tasaInteres = 1.5 / 100;
+    tasaInteres = 3.5 / 100;
 
     //calculo amortizaciones Sobre saldos
 
@@ -43,8 +43,8 @@ function MostrarTabla() {
         impuesto: s_Impuesto.toFixed(2),
       });
       const resultadoDiv = document.getElementById("Mostrar_Tabla");
-      resultadoDiv.innerHTML = `<table class="table table-striped id="Tabla_Amortizaciones">
-   <thead>
+      resultadoDiv.innerHTML = `<table class="table table-striped" id="Tabla_Amortizaciones">
+   <thead class="table-primary">
    <tr>
        <th>Mes</th>
        <th>Cuota</th>
@@ -60,7 +60,7 @@ function MostrarTabla() {
        (d) => `
        <tr>
        <td>${d.mes}</td>
-       <td>Q ${d.cuota}</td>
+       <td><b>Q ${d.cuota}</b></td>
        <td>Q ${d.capital}</td>
        <td>Q ${d.interes}</td>
        <td>Q ${d.saldo}</td>
@@ -154,17 +154,30 @@ function calcularPrestamo() {
   const Tiempo = document.getElementById("Tiempo_laborando").value;
   const TelefonoEmpresa= document.getElementById("telefonoEmpresa").value;
   const TelefonoCasa= document.getElementById("telefonoCasa").value;
+  const Direccion= document.getElementById("Direccion").value;
+  //Referencias personales
+ const RNombre1= document.getElementById("RNombre1").value;
+ const RTelefono1= document.getElementById("RTelefono1").value;
+ const RNombre2= document.getElementById("RNombre2").value;
+ const RTelefono2= document.getElementById("RTelefono2").value;
+
 
   const totalInteres = 0;
   const totalPagar = 0;
 
   //se verifica si el DPI es correcto
 
-  if (dpi.length === 13) {
+  if (dpi.length === 13 && nombre.length>5 && nit.length>4 &&correo.length>5 
+      && telefono.length===8 && empresa.length>1 && puesto.length>2 && TelefonoEmpresa.length>6
+      && Tiempo.length>1 && document.getElementById("ingresos").value.length>2 && RNombre1.length>4   && RNombre2.length>4   
+      && RTelefono1.length===8 && RTelefono2.length===8  
+      && document.getElementById("monto").value.length>2
+      && document.getElementById("cuotas").value.length>0
+    ) {
     if (monto > 20000) {
       const credito = document.getElementById("tipo");
       credito.value = "Sobre Saldos";
-      tasaInteres = 1.5 / 100;
+      tasaInteres = 3.5 / 100;
 
       //calculo amortizaciones Sobre saldos
 
@@ -238,6 +251,12 @@ function calcularPrestamo() {
     <div class="Detalles_texto"><p><strong>Correo Electrónico:</strong> ${correo}</p></div>
     <div class="Detalles_texto"><p><strong>Teléfono:</strong> ${telefono}</p></div>
     <div class="Detalles_texto"><p><strong>Teléfono de Casa:</strong> ${TelefonoCasa}</p></div>
+    <div class="Detalles_texto"><p><strong>Dirección de residencia:</strong> ${Direccion}</p></div>
+    <p style="margin-left: 1rem; font-size: 22px;"><strong> Referencias personales </strong></p>
+    <div class="Detalles_texto"><p><strong>Nombre:</strong> ${RNombre1}</p></div>
+    <div class="Detalles_texto"><p><strong>Telefono:</strong> ${RTelefono1}</p></div>
+    <div class="Detalles_texto"><p><strong>Nombre:</strong> ${RNombre2}</p></div>
+    <div class="Detalles_texto"><p><strong>Telefono:</strong> ${RTelefono2}</p></div>
     <p style="margin-left: 1rem; font-size: 22px;"><strong> Datos Laborales </strong></p>
     <div class="Detalles_texto"><p><strong>Empresa en la que labora:</strong> ${empresa}</p></div>
     <div class="Detalles_texto"><p><strong>Teléfono de la empresa:</strong> ${TelefonoEmpresa}</p></div>
@@ -267,7 +286,7 @@ function calcularPrestamo() {
               (d) => `
             <tr>
               <th scope="row">${d.mes}</th>
-              <td>Q ${d.cuota}</td>
+              <td><b> Q ${d.cuota} </b></td>
               <td>Q ${d.capital}</td>
               <td>Q ${d.interes}</td>
               <td>Q ${d.saldo}</td>
@@ -294,6 +313,13 @@ function calcularPrestamo() {
     <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Correo Electrónico:</strong> ${correo}</p></div>
     <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Teléfono:</strong> ${telefono}</p></div>
     <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Teléfono de Casa:</strong> ${TelefonoCasa}</p></div>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Direccion de residencia:</strong> ${Direccion}</p></div>
+    <p style="margin-left: 1rem; font-size: 15px;"><strong> Referencias personales </strong></p>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Nombre:</strong> ${RNombre1}</p></div>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Teléfono:</strong> ${RTelefono1}</p></div>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Nombre:</strong> ${RNombre2}</p></div>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Teléfono:</strong> ${RTelefono2}</p></div>
+
     <p style="margin-left: 1rem; font-size: 15px;"><strong> Datos Laborales </strong></p>
     <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Empresa en la que labora:</strong> ${empresa}</p></div>
     <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Teléfono de la empresa:</strong> ${TelefonoEmpresa}</p></div>
@@ -303,6 +329,7 @@ function calcularPrestamo() {
     <hr>
     <div class="detalles_monto" style="font-size: 14px;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Monto Solicitado:</strong> Q ${monto.toFixed(2)}</p></div>
     <div class="detalles_monto" style="font-size: 14px;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">No. de Cuotas:</strong> ${cuotas}</p></div>
+    <div class="detalles_monto" style="font-size: 14px;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">No. de Cuotas:</strong> ${tipo}</p></div>
     <hr>
         <div class="outer-wrapper">
         <div class="table-wrapper">
@@ -323,9 +350,9 @@ function calcularPrestamo() {
             ${c_detalle
               .map(
                 (d) => `
-                <tr style="text-align: center;border: black solid 2px;">
+                  <tr style="text-align: center;border: black solid 2px;">
                   <th scope="row" style="width:width: 400px;">${d.mes}</th>
-                  <td style="width:width: 400px;">Q ${d.cuota}</td>
+                  <td style="width:width: 400px;"><b>Q ${d.cuota}</b></td>
                   <td style="width:width: 400px;">Q ${d.capital}</td>
                   <td style="width:width: 400px;">Q ${d.interes}</td>
                   <td style="width:width: 400px;">Q ${d.saldo}</td>
@@ -359,7 +386,7 @@ function calcularPrestamo() {
 let miCaptcha;
 let onloadCallback = function () {
   miCaptcha = grecaptcha.render("miCaptcha", {
-    sitekey: "6LcXp6olAAAAAKiXut9OKx6ClO-STCFDYIMronUq",
+    sitekey: "6LeqPuYlAAAAAPSvUaFLvFdnmsJBn34wIsNLDF1Y",
     callback: "verifyCaptcha",
   });
 };
@@ -375,14 +402,14 @@ function verifyCaptcha(response) {
 
 function sendEmail() {
   const xhr = new XMLHttpRequest();
-  xhr.open("POST", "././src/send.php", true);
+  xhr.open("POST", "https://vallague.com/plantillas/premium/prestamos/src/send.php", true);
+  //xhr.open("POST", "././src/send.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.setRequestHeader('Origin', 'https://easycapital.com.gt/');
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
       let response = JSON.parse(xhr.responseText);
       if (response.success) {
-        Mensaje_Enviado();
-        
       } else {
         alert(response.message);
       }
@@ -392,6 +419,7 @@ function sendEmail() {
   const correo = encodeURIComponent(document.getElementById("correo").value);
   const captchaResponse = grecaptcha.getResponse();
   const postData = `correo=${correo}&message=${message}&g-recaptcha-response=${captchaResponse}`;
+  Mensaje_Enviado();
   xhr.send(postData);
 }
 

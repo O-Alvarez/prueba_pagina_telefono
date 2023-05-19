@@ -39,8 +39,9 @@
             </div>
             <div class="col-md-6 col-12 d-print-none">
                 <label for="dpi" class="form-label">Número de DPI:</label>
-                <input type="text" class="form-control" id="dpi" name="dpi" required autocomplete="" minlength="13"  maxlength="13">
+                <input type="text" class="form-control" id="dpi" name="dpi" required autocomplete="off" minlength="13"  maxlength="13">
             </div>
+
             <div class="col-md-6 col-12 d-print-none">
                 <label for="nit" class="form-label">NIT:</label>
                 <input type="text" class="form-control" id="nit" name="nit" required autocomplete="off" minlength="6"
@@ -57,13 +58,20 @@
             <div class="col-md-6 col-12 d-print-none">
                 <label for="telefonoCasa" class="form-label">Teléfono de casa:</label>
                 <input type="tel" class="form-control" id="telefonoCasa" name="telefonoCasa" autocomplete="off"
-                    minlength="8" maxlength="12" >
+                    minlength="8" maxlength="8" >
             </div>
             <div class="col-md-6 col-12 d-print-none">
                 <label for="telefono" class="form-label">Teléfono Movil:</label>
                 <input type="tel" class="form-control" id="telefono" name="telefono" required autocomplete="off"
-                    minlength="8" maxlength="12" >          
+                    minlength="8" maxlength="8" >          
             </div>
+            
+            <div class="col-md-6 col-12 d-print-none">
+                <label for="Direccion" class="form-label">Dirección de residencia actual:</label>
+                <input type="text" class="form-control" id="Direccion" name="Direccion" required autocomplete="off"
+                    minlength="8" >
+            </div>
+
             <div class="col-md-12 d-print-none">
                 <label for="empresa" class="form-label">Empresa en la que labora:</label>
                 <input type="text" class="form-control" id="empresa" name="empresa" required autocomplete="off"
@@ -90,6 +98,27 @@
                      min="500">
                 
             </div>
+            <h2 class="d-print-none">Referencias Personales</h2>
+
+            <div class="col-md-6 col-12 d-print-none">
+                <label for="RNombre1" class="form-label">Nombre completo:</label>
+                <input type="text" class="form-control" id="RNombre1" name="RNombre1" required autocomplete="" minlength="5"  maxlength="13">
+            </div>
+            <div class="col-md-6 col-12 d-print-none">
+                <label for="RTelefono1" class="form-label">Telefono Celular:</label>
+                <input type="tel" class="form-control" id="RTelefono1" name="RTelefono1" required autocomplete="" minlength="8"  maxlength="8">
+            </div>
+
+            <div class="col-md-6 col-12 d-print-none">
+                <label for="RNombre2" class="form-label">Nombre completo:</label>
+                <input type="text" class="form-control" id="RNombre2" name="RNombre2" required autocomplete="" minlength="5"  maxlength="13">
+            </div>
+            <div class="col-md-6 col-12 d-print-none">
+                <label for="RTelefono2" class="form-label">Telefono Celular:</label>
+                <input type="tel" class="form-control" id="RTelefono2" name="RTelefono2" required autocomplete="" minlength="8"  maxlength="8">
+            </div>
+
+
             <h2 class="d-print-none">Información de Crédito a Solicitar</h2>
             <div class="col-md-6 col-12 d-print-none">
                 <label for="monto" class="form-label">Monto Solicitado:</label>
@@ -142,7 +171,7 @@
 
         <script src="assets/js/script.js"></script>
         <div class="container-sm d-print-none" id="Enviar_Recaptcha">
-            <div class="g-recaptcha" data-sitekey="6LcXp6olAAAAAKiXut9OKx6ClO-STCFDYIMronUq" id="miCaptcha"></div>
+            <div class="g-recaptcha" data-sitekey="6LeqPuYlAAAAAPSvUaFLvFdnmsJBn34wIsNLDF1Y" id="miCaptcha"></div>
             <div class="enviar">
                
                 <input type="button" name="Enviar" id="Enviar_solicitud" class="btn btn-primary d-print-none"
@@ -155,7 +184,7 @@
 <script>
     window.onload = function () {
         grecaptcha.render("miCaptcha", {
-            sitekey: "6LcXp6olAAAAAKiXut9OKx6ClO-STCFDYIMronUq",
+            sitekey: "6LfyugUmAAAAAJ5-0LcnTWZOBtMrGPZsfck9AO7_",
         });
     };
 </script>

@@ -1,14 +1,15 @@
 <?php
+echo "Hola";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $secretKey = "6LcXp6olAAAAAOEuZIyjTk9KRK2Q7JIBdRs277gI";
+    $secretKey = "6LeqPuYlAAAAALleY42EIKXfGChlpz9ryAeRyfPV";
     $responseKey = $_POST['g-recaptcha-response'];
     $userIP = $_SERVER['REMOTE_ADDR'];
     $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
     $response = file_get_contents($url);
     $response = json_decode($response);
-    if ($response->success) {
+    //if ($response->success) {
         if (isset($_POST['correo']) && isset($_POST['message'])) {
-            $to = "contabilidad@inssafreight.com.gt";
+            $to = "easycapital@easycapital.com.gt";
             $subject = "Solicitud de préstamo";
             $message = $_POST['message'];
             $headers = "From: " . $_POST['correo'] . "\r\n" .
@@ -35,8 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo json_encode(array("success" => false, "message" => "No se proporcionaron los datos necesarios."));
         }
-   } else {
-        echo json_encode(array("success" => false, "message" => "Por favor, resuelve el captcha correctamente."));
-    }
+   //} else {
+   //     echo json_encode(array("success" => false, "message" => "Por favor, resuelve el captcha correctamente."));
+   // }
 }
 ?>
