@@ -1,18 +1,18 @@
 <?php
-// Datos del destinatario y mensaje
-$to = 'solicitud.prestamosec@gmail.com';
-$subject = 'Prueba de correo';
-$message = 'Hola, esto es una prueba de envío de correo desde PHP para corroborar que la direccion de correo es incorrecta o no sdfsdfsd este es nuevo 15:39 horas';
+$destinatario = "alvarezoscardavid1@gmail.com";
+$asunto = "Prueba de correo desde PHP";
+$mensaje = "Este es un mensaje de prueba enviado desde PHP.";
 
-// Cabeceras del correo
-$headers = 'From: bml@bml.com.gt' . "\r\n" .
-           'Reply-To: bml@bml.com.gt' . "\r\n" .
-           'X-Mailer: PHP/' . phpversion();
+$headers = "From: remitente@example.com\r\n";
+$headers .= "Reply-To: remitente@example.com\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-// Envío del correo
-if (mail($to, $subject, $message, $headers)) {
-    echo 'El correo se ha enviado correctamente.';
+$mail_enviado = mail($destinatario, $asunto, $mensaje, $headers);
+
+if ($mail_enviado) {
+    echo "Correo enviado correctamente.";
 } else {
-    echo 'Ha ocurrido un error al enviar el correo.';
+    echo "Error al enviar el correo.";
 }
 ?>

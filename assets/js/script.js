@@ -261,7 +261,7 @@ function calcularPrestamo() {
     <div class="Detalles_texto"><p><strong>Empresa en la que labora:</strong> ${empresa}</p></div>
     <div class="Detalles_texto"><p><strong>Teléfono de la empresa:</strong> ${TelefonoEmpresa}</p></div>
     <div class="Detalles_texto"><p><strong>Puesto que ocupa:</strong> ${puesto}</p></div>
-    <div class="Detalles_texto"><p><strong>Años de laburo en la empresa:</strong> ${Tiempo}</p></div>
+    <div class="Detalles_texto"><p><strong>Tiempo de labor:</strong> ${Tiempo}</p></div>
     <div class="Detalles_texto"><p><strong>Total de Ingresos mensuales:</strong> Q ${ingresos.toFixed(2)}</p></div>
     <hr>
     <div class="detalles_monto"><p><strong>Monto Solicitado:</strong> Q ${monto.toFixed(2)}</p></div>
@@ -324,7 +324,7 @@ function calcularPrestamo() {
     <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Empresa en la que labora:</strong> ${empresa}</p></div>
     <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Teléfono de la empresa:</strong> ${TelefonoEmpresa}</p></div>
     <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Puesto que ocupa:</strong> ${puesto}</p></div>
-    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Años de laburo en la empresa:</strong> ${Tiempo}</p></div>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Tiempo de labor:</strong> ${Tiempo}</p></div>
     <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Total de Ingresos mensuales:</strong> Q ${ingresos.toFixed(2)}</p></div>
     <hr>
     <div class="detalles_monto" style="font-size: 14px;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Monto Solicitado:</strong> Q ${monto.toFixed(2)}</p></div>
@@ -480,6 +480,15 @@ function Mensaje_Enviado(){
   <ol>
       <li> Compruebe que el mensaje se encuentre en la carpeta de spam.</li>
       <li> Verifique que el correo proporcionado está correctamente escrito.</li>
+  </ol>
+   <h2>Solicitamos la siguiente documentación para tu préstamo</h2>
+  <ol>
+      <li> DPI vigente.</li>
+      <li> Recibo de agua, Luz o Teléfono.</li>
+      <li> Constancia Laboral (antigüedad mayor a 1 año).</li>
+      <li> 2 Cartas de referencia Personal.</li>
+      <li> Últimos 3 estados de cuenta.</li>
+      <li> En caso sea requerido fiador, debe presentar los mismos requisitos que el solicitante.</li>
   </ol>
 </div>`;
 }
