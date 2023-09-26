@@ -152,28 +152,37 @@ function calcularPrestamo() {
   const cuotas = parseInt(document.getElementById("cuotas").value);
   const tipo = document.getElementById("tipo").value;
   const Tiempo = document.getElementById("Tiempo_laborando").value;
-  const TelefonoEmpresa= document.getElementById("telefonoEmpresa").value;
-  const TelefonoCasa= document.getElementById("telefonoCasa").value;
-  const Direccion= document.getElementById("Direccion").value;
+  const TelefonoEmpresa = document.getElementById("telefonoEmpresa").value;
+  const TelefonoCasa = document.getElementById("telefonoCasa").value;
+  const Direccion = document.getElementById("Direccion").value;
   //Referencias personales
- const RNombre1= document.getElementById("RNombre1").value;
- const RTelefono1= document.getElementById("RTelefono1").value;
- const RNombre2= document.getElementById("RNombre2").value;
- const RTelefono2= document.getElementById("RTelefono2").value;
-
-
+  const RNombre1 = document.getElementById("RNombre1").value;
+  const RTelefono1 = document.getElementById("RTelefono1").value;
+  const RNombre2 = document.getElementById("RNombre2").value;
+  const RTelefono2 = document.getElementById("RTelefono2").value;
   const totalInteres = 0;
   const totalPagar = 0;
 
   //se verifica si el DPI es correcto
 
-  if (dpi.length === 13 && nombre.length>5 && nit.length>4 &&correo.length>5 
-      && telefono.length===8 && empresa.length>1 && puesto.length>2 && TelefonoEmpresa.length>6
-      && Tiempo.length>1 && document.getElementById("ingresos").value.length>2 && RNombre1.length>4   && RNombre2.length>4   
-      && RTelefono1.length===8 && RTelefono2.length===8  
-      && document.getElementById("monto").value.length>2
-      && document.getElementById("cuotas").value.length>0
-    ) {
+  if (
+    dpi.length === 13 &&
+    nombre.length > 5 &&
+    nit.length > 4 &&
+    correo.length > 5 &&
+    telefono.length === 8 &&
+    empresa.length > 1 &&
+    puesto.length > 2 &&
+    TelefonoEmpresa.length > 6 &&
+    Tiempo.length > 1 &&
+    document.getElementById("ingresos").value.length > 2 &&
+    RNombre1.length > 4 &&
+    RNombre2.length > 4 &&
+    RTelefono1.length === 8 &&
+    RTelefono2.length === 8 &&
+    document.getElementById("monto").value.length > 2 &&
+    document.getElementById("cuotas").value.length > 0
+  ) {
     if (monto > 20000) {
       const credito = document.getElementById("tipo");
       credito.value = "Sobre Saldos";
@@ -262,9 +271,13 @@ function calcularPrestamo() {
     <div class="Detalles_texto"><p><strong>Teléfono de la empresa:</strong> ${TelefonoEmpresa}</p></div>
     <div class="Detalles_texto"><p><strong>Puesto que ocupa:</strong> ${puesto}</p></div>
     <div class="Detalles_texto"><p><strong>Tiempo de labor:</strong> ${Tiempo}</p></div>
-    <div class="Detalles_texto"><p><strong>Total de Ingresos mensuales:</strong> Q ${ingresos.toFixed(2)}</p></div>
+    <div class="Detalles_texto"><p><strong>Total de Ingresos mensuales:</strong> Q ${ingresos.toFixed(
+      2
+    )}</p></div>
     <hr>
-    <div class="detalles_monto"><p><strong>Monto Solicitado:</strong> Q ${monto.toFixed(2)}</p></div>
+    <div class="detalles_monto"><p><strong>Monto Solicitado:</strong> Q ${monto.toFixed(
+      2
+    )}</p></div>
     <div class="detalles_monto"><p><strong>No. de Cuotas:</strong> ${cuotas}</p></div>
     <hr>
     <div class="outer-wrapper">
@@ -301,7 +314,9 @@ function calcularPrestamo() {
     </div>
     <hr>
     <!--<p><strong>Total a pagar:</strong> Q ${totalPagar.toFixed(2)}</p>
-    <p><strong>Total de intereses:</strong> Q ${totalInteres.toFixed(2)}</p>-->`;
+    <p><strong>Total de intereses:</strong> Q ${totalInteres.toFixed(
+      2
+    )}</p>-->`;
 
     const Cuerpo_correo = document.getElementById("Formato_Correo");
     Cuerpo_correo.innerHTML = `
@@ -325,9 +340,13 @@ function calcularPrestamo() {
     <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Teléfono de la empresa:</strong> ${TelefonoEmpresa}</p></div>
     <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Puesto que ocupa:</strong> ${puesto}</p></div>
     <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Tiempo de labor:</strong> ${Tiempo}</p></div>
-    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Total de Ingresos mensuales:</strong> Q ${ingresos.toFixed(2)}</p></div>
+    <div style="margin-left: 1rem; margin-right: 1rem;padding-left: 1rem;border-radius: 2px;background-color: #e2e6eb86;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Total de Ingresos mensuales:</strong> Q ${ingresos.toFixed(
+      2
+    )}</p></div>
     <hr>
-    <div class="detalles_monto" style="font-size: 14px;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Monto Solicitado:</strong> Q ${monto.toFixed(2)}</p></div>
+    <div class="detalles_monto" style="font-size: 14px;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">Monto Solicitado:</strong> Q ${monto.toFixed(
+      2
+    )}</p></div>
     <div class="detalles_monto" style="font-size: 14px;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">No. de Cuotas:</strong> ${cuotas}</p></div>
     <div class="detalles_monto" style="font-size: 14px;"><p><strong style="font-size: 14px; margin-right: 0.5rem;">No. de Cuotas:</strong> ${tipo}</p></div>
     <hr>
@@ -400,12 +419,119 @@ function verifyCaptcha(response) {
   }
 }
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+const prueba = async () => {
+  //obtener el token
+  const usuario = {
+    userName: "test123",
+    password: "test@123",
+  };
+  const url = "http://74.208.63.148:8090/api/v1";
+  const nombre = document.getElementById("nombre").value;
+  const dpi = parseInt(document.getElementById("dpi").value);
+  const nit = document.getElementById("nit").value;
+  const correo = document.getElementById("correo").value;
+  const telefono = document.getElementById("telefono").value;
+  // const empresa = document.getElementById("empresa").value;
+  const puesto = document.getElementById("puesto").value;
+  // const ingresos = parseFloat(document.getElementById("ingresos").value);
+  // const monto = parseFloat(document.getElementById("monto").value);
+  // const cuotas = parseInt(document.getElementById("cuotas").value);
+  // const tipo = document.getElementById("tipo").value;
+  // const Tiempo = document.getElementById("Tiempo_laborando").value;
+  // const TelefonoEmpresa = document.getElementById("telefonoEmpresa").value;
+  const TelefonoCasa = document.getElementById("telefonoCasa").value;
+  const Direccion = document.getElementById("Direccion").value;
+  //Referencias personales
+  // const RNombre1 = document.getElementById("RNombre1").value;
+  // const RTelefono1 = document.getElementById("RTelefono1").value;
+  // const RNombre2 = document.getElementById("RNombre2").value;
+  // const RTelefono2 = document.getElementById("RTelefono2").value;
+
+  const datos = {
+    dpi: dpi,
+    nit: nit,
+    nombres: nombre,
+    apellido: "N/A",
+    correo: correo,
+    telefonoPrincipal: telefono,
+    telefonoSecundario: TelefonoCasa,
+    direccion: "direccion",
+    municipio: "N/A",
+    departamento: "N/A",
+    edad: 0,
+    genero: "N/A",
+    estadoCivil: "N/A",
+    ocupacion: puesto,
+    createdAt: "2023-09-25T20:43:09.783Z",
+    updatedAt: "2023-09-25T20:43:09.783Z",
+  };
+  //obtener token
+  try {
+    const conexion = await fetch(
+      url + "/auth/login",
+      {
+        method: "POST",
+        headers: {
+          accept: "*/*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(usuario),
+      }
+    );
+
+    if (!conexion.ok) {
+      throw new Error("La solicitud no fue exitosa");
+    }
+
+    const respuesta = await conexion.json();
+    const token = respuesta.token;
+    
+    //enviar datos
+      try {
+        const conexion_datos = await fetch(
+          url + "/customers",{
+            method: "POST",
+            headers: {
+              accept: "*/*",
+              Authorization: "Bearer " + token,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(datos),
+          }
+        )
+          if (conexion_datos.ok) {
+            console.log("Datos enviados correctamente");
+          } else {
+            console.log("Error al enviar los datos");
+          } 
+
+      }catch(error){
+        console.error("Hubo un error:", error);
+      }
+
+  } catch (error) {
+    console.error("Hubo un error:", error);
+  }
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
 function sendEmail() {
   const xhr = new XMLHttpRequest();
-  xhr.open("POST", "https://vallague.com/plantillas/premium/prestamos/src/send.php", true);
+  xhr.open(
+    "POST",
+    "https://vallague.com/plantillas/premium/prestamos/src/send.php",
+    true
+  );
   //xhr.open("POST", "././src/send.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhr.setRequestHeader('Origin', 'https://easycapital.com.gt/');
+  xhr.setRequestHeader("Origin", "https://easycapital.com.gt/");
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
       let response = JSON.parse(xhr.responseText);
@@ -415,7 +541,9 @@ function sendEmail() {
       }
     }
   };
-  const message = encodeURIComponent(document.getElementById("Formato_Correo").innerHTML);
+  const message = encodeURIComponent(
+    document.getElementById("Formato_Correo").innerHTML
+  );
   const correo = encodeURIComponent(document.getElementById("correo").value);
   const captchaResponse = grecaptcha.getResponse();
   const postData = `correo=${correo}&message=${message}&g-recaptcha-response=${captchaResponse}`;
@@ -430,8 +558,6 @@ form.addEventListener("submit", function (event) {
   window.location.hash = "#Enviar_Recaptcha";
 });
 
-//codigo para implemtar la descarga de la informacion en un pdf
-
 function generar_pdf() {
   // Obtener el div que contiene el contenido a exportar
   const pdf = new jsPDF("p", "pt", "letter");
@@ -443,7 +569,9 @@ function generar_pdf() {
   function downloadPDFWithBrowserPrint() {
     window.print();
   }
-  document.querySelector("#browserPrint").addEventListener("click", downloadPDFWithBrowserPrint);
+  document
+    .querySelector("#browserPrint")
+    .addEventListener("click", downloadPDFWithBrowserPrint);
   //pdf.save("prestamo.pdf");
 
   /*
@@ -470,10 +598,9 @@ function generar_pdf() {
    // doc.save('miDocumento.pdf');*/
 }
 
-
-function Mensaje_Enviado(){
-  const Contenedor= document.getElementById("Contenedor");
-  Contenedor.innerHTML=`<div class="Mensaje_exitoso">
+function Mensaje_Enviado() {
+  const Contenedor = document.getElementById("Contenedor");
+  Contenedor.innerHTML = `<div class="Mensaje_exitoso">
   <h2>La solicitud ha sido enviada correctamente</h2>
   <p>En su correo electronico podrá verificar que la solicitud ha sido enviada correctamente. </p>
   <p>En caso de no recibirlo:<p>
